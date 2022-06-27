@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import '../../constants/constants.dart';
 
-class BankingChart extends StatelessWidget {
+class ManufacturingChart extends StatelessWidget {
   List<charts.Series> seriesList = _createSampleData();
   final bool animate = true;
 
-  BankingChart();
+  ManufacturingChart();
 
-  factory BankingChart.withSampleData() {
-    return new BankingChart();
+  factory ManufacturingChart.withSampleData() {
+    return new ManufacturingChart();
   }
 
   @override
@@ -25,7 +25,7 @@ class BankingChart extends StatelessWidget {
       // By default the legend will display above the chart.
       behaviors: [
         charts.ChartTitle(
-            'Scope Emissions for the Banking sector in 2020(left bar) and 2021(right bar)',
+            'Scope Emissions for the Manufacturing sector in 2020(left bar) and 2021(right bar)',
             behaviorPosition: charts.BehaviorPosition.bottom,
             titleStyleSpec:   const charts.TextStyleSpec(fontSize: 14,),
             titleOutsideJustification:
@@ -36,53 +36,78 @@ class BankingChart extends StatelessWidget {
 
   /// Create series list with multiple series
   static List<charts.Series<Emissions, String>> _createSampleData() {
-    final fnb_2020 = [
-      new Emissions('FNB', 8301), //1 2020
-      new Emissions('FNB', 171), // 2 2020
+    final pernod_ricard_2020 = [
+      new Emissions('Pernod Ricard SA',
+          385), // 1 2020      new Emissions('Pernod Ricard SA', 1035), // 2 2020
     ];
 
-    final fnb_2021 = [
-      new Emissions('FNB', 6507), // 1 2021
-      new Emissions('FNB', 153), //2 2021
+    final pernod_ricard_2021 = [
+      new Emissions('Pernod Ricard SA', 345), // 1 2021
+      new Emissions('Pernod Ricard SA', 650), // 2 2021
     ];
 
-    final nedbank_2020 = [
-      new Emissions('Nedbank ', 1265), // 1 2020
-      new Emissions('Nedbank ', 118050), //2 2020
+    final nestle_2020 = [
+      new Emissions('Nestle SA', 579), // 1 2020
+      new Emissions('Nestle SA', 1555), // 2 2020
     ];
 
-    final nedbank_2021 = [
-      new Emissions('Nedbank ', 1541), // 1 2021
-      new Emissions('Nedbank', 110529), //2 2021
+    final nestle_2021 = [
+      new Emissions('Nestle SA', 730), // 1 2021
+      new Emissions('Nestle SA', 1375), // 2 2021
     ];
+
+    final isuzu_2020 = [
+      new Emissions('Isuzu Motors SA', 71598), // 1 2020
+      new Emissions('Isuzu Motors SA', 371340), // 2 2020
+    ];
+
+    final isuzu_2021 = [
+      new Emissions('Isuzu Motors SA', 78709), // 1 2021
+      new Emissions('Isuzu Motors SA', 353716), // 2 2021
+    ];
+
     return [
       new charts.Series<Emissions, String>(
-        id: 'FNB (2020)',
+        id: 'Nestle (2020)',
         colorFn: (_, __) => charts.ColorUtil.fromDartColor(pinks[3]),
         domainFn: (Emissions emission, _) => emission.name,
         measureFn: (Emissions emission, _) => emission.emissions,
-        data: fnb_2020,
+        data: nestle_2020,
       ),
       new charts.Series<Emissions, String>(
-        id: 'FNB (2021)',
+        id: 'Nestle (2021)',
         colorFn: (_, __) => charts.ColorUtil.fromDartColor(pinks[2]),
         domainFn: (Emissions emission, _) => emission.name,
         measureFn: (Emissions emission, _) => emission.emissions,
-        data: fnb_2021,
+        data: nestle_2021,
       ),
       new charts.Series<Emissions, String>(
-        id: 'Nedbank (2020)',
+        id: 'Pernod Ricard (2020)',
         colorFn: (_, __) => charts.ColorUtil.fromDartColor(pinks[1]),
         domainFn: (Emissions emission, _) => emission.name,
         measureFn: (Emissions emission, _) => emission.emissions,
-        data: nedbank_2020,
+        data: pernod_ricard_2020,
       ),
       new charts.Series<Emissions, String>(
-        id: 'Nedbank (2021)',
+        id: 'Pernod Ricard (2021)',
         colorFn: (_, __) => charts.ColorUtil.fromDartColor(pinks[0]),
         domainFn: (Emissions emission, _) => emission.name,
         measureFn: (Emissions emission, _) => emission.emissions,
-        data: nedbank_2021,
+        data: pernod_ricard_2021,
+      ),
+      new charts.Series<Emissions, String>(
+        id: 'Isuzu Motors (2020)',
+        colorFn: (_, __) => charts.ColorUtil.fromDartColor(pinks[3]),
+        domainFn: (Emissions emission, _) => emission.name,
+        measureFn: (Emissions emission, _) => emission.emissions,
+        data: isuzu_2020,
+      ),
+      new charts.Series<Emissions, String>(
+        id: 'Isuzu Motors (2021)',
+        colorFn: (_, __) => charts.ColorUtil.fromDartColor(pinks[2]),
+        domainFn: (Emissions emission, _) => emission.name,
+        measureFn: (Emissions emission, _) => emission.emissions,
+        data: isuzu_2021,
       ),
     ];
   }
