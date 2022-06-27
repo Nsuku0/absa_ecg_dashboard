@@ -8,11 +8,12 @@ class Scope2020 extends StatelessWidget {
   Scope2020({Key? key}) : super(key: key);
 
   final List<RevDat> chartData = [
-    RevDat("Retail", 487172, pinks[0]),
-    RevDat("Mining", 1049767, headings_orange),
-    RevDat("Manu", 74415, pinks[2]),
-    RevDat("Agri", 130559, oranges[0]),
-    RevDat("TMT", 386541, lightText),
+    RevDat("Retail", 487172.33, const Color.fromRGBO(135, 19, 60, 1)),
+    RevDat("Mining", 1049766.5, const Color.fromRGBO(175, 20, 75, 1)),
+    RevDat("Banking", 306420.2096, const Color.fromRGBO(240, 50, 90, 1)),
+    RevDat("Manufactoring", 74415.33, const Color.fromRGBO(240, 90, 120, 1)),
+    RevDat("Agriculture", 130558.67, const Color.fromRGBO(225, 120, 15, 1)),
+    RevDat("TMT", 386540.5, const Color.fromRGBO(250, 85, 30, 1)),
   ];
 
   @override

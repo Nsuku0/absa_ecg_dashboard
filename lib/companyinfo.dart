@@ -323,7 +323,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //anglo american
               SizedBox(
                 height: 50,
-                width: 100,
+                width: 200,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -406,7 +406,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //pernod ricard
               SizedBox(
                 height: 50,
-                width: 200,
+                width: 450,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -489,7 +489,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //nestle
               SizedBox(
                 height: 50,
-                width: 100,
+                width: 400,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -654,7 +654,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //isuzu
               SizedBox(
                 height: 50,
-                width: 100,
+                width: 400,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -737,7 +737,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //country bird
               SizedBox(
                 height: 50,
-                width: 100,
+                width: 400,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -821,7 +821,7 @@ class _MyHomePageState extends State<MyHomePage> {
               // karan beef
               SizedBox(
                 height: 50,
-                width: 100,
+                width: 400,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -905,7 +905,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //afgri grain
               SizedBox(
                 height: 50,
-                width: 100,
+                width: 400,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -1151,10 +1151,10 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
-
+//vodacom
               SizedBox(
                 height: 50,
-                width: 100,
+                width: 200,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -1238,7 +1238,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //woolies
               SizedBox(
                 height: 50,
-                width: 100,
+                width: 300,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -1322,7 +1322,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //mr price
               SizedBox(
                 height: 50,
-                width: 100,
+                width: 300,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -1423,7 +1423,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     const Text(
                                       'Shoprite',
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: 40,
                                       ),
                                     ),
                                     SizedBox(

@@ -59,11 +59,12 @@ class App extends State<Scope2021> {
 
   List<RevDat> getSectorInfo() {
     final List<RevDat> chartData = [
-      RevDat("Agri", 283577, oranges[0]),
-      RevDat("TMT", 308638, lightText),
-      RevDat("Retail", 7237062, pinks[0]),
-      RevDat("Mining", 1175694, headings_orange),
-      RevDat("Manu", 72588, pinks[2]),
+      RevDat("Retail", 7237062.17, const Color.fromRGBO(135, 19, 60, 1)),
+      RevDat("Mining", 1175693.667, const Color.fromRGBO(175, 20, 75, 1)),
+      RevDat("Banking", 28020.30315, const Color.fromRGBO(240, 50, 90, 1)),
+      RevDat("Manufactoring", 72587.5, const Color.fromRGBO(240, 90, 120, 1)),
+      RevDat("Agriculture", 283577.33, const Color.fromRGBO(225, 120, 15, 1)),
+      RevDat("TMT", 308638.17, const Color.fromRGBO(250, 85, 30, 1)),
     ];
     return chartData;
   }

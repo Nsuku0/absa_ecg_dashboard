@@ -24,7 +24,8 @@ class Home extends StatelessWidget {
       Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("icons/absa.png"), // <-- BACKGROUND IMAGE
+            image:
+                AssetImage("background/background.jpg"), // <-- BACKGROUND IMAGE
             fit: BoxFit.cover,
           ),
         ),
@@ -49,18 +50,21 @@ class Home extends StatelessWidget {
             children: <Widget>[
               //const Center(child: Text('Welcome to ABSA Green Deal')),
               Container(
+                  alignment: Alignment.center,
                   color: barchart[4],
                   padding: const EdgeInsets.all(30.0),
-                  child: const Text(
-                    'By the year 2030 ABSA aims to transition into making more green deals as an attempt to uphold the Global Development Goals proposed by the United Nations and promoting Sustainability overall.',
-                    style: TextStyle(
-                      //fontSize: 30.0,
-                      fontWeight: FontWeight.bold,
-                      fontStyle: FontStyle.italic,
-                      fontSize: 40,
-                      color: Colors.white,
-                    ),
-                  )),
+                  child: const SizedBox(
+                      height: 100,
+                      width: 700,
+                      child: Text(
+                        'By the year 2030 ABSA aims to transition into making more green deals as an attempt to uphold\n the Global Development Goals proposed by the United Nations and promoting Sustainability overall.',
+                        style: TextStyle(
+                          //fontSize: 30.0,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 30,
+                          color: Colors.white,
+                        ),
+                      ))),
               /* ElevatedButton(
             onPressed: () {},
             style: ButtonStyle (backgroundColor: MaterialStateProperty.all<Color>(Colors.red) ),
