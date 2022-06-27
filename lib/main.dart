@@ -1,6 +1,7 @@
 //import 'package:bridgeup/piechart.dart';
 import 'package:flutter/material.dart';
 import 'dashboard.dart';
+import 'constants/constants.dart';
 
 void main() => runApp(const MaterialApp(
       home: Home(),
@@ -29,6 +30,8 @@ class Home extends StatelessWidget {
         ),
       ),
       Scaffold(
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerFloat,
           backgroundColor: Colors.transparent,
           appBar: AppBar(
               title: const Text(
@@ -39,20 +42,23 @@ class Home extends StatelessWidget {
                 ),
               ),
               centerTitle: true,
-              backgroundColor: Colors.green),
+              backgroundColor: green),
           body: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               //const Center(child: Text('Welcome to ABSA Green Deal')),
               Container(
-                  color: Colors.redAccent,
+                  color: barchart[4],
                   padding: const EdgeInsets.all(30.0),
                   child: const Text(
                     'By the year 2030 ABSA aims to transition into making more green deals as an attempt to uphold the Global Development Goals proposed by the United Nations and promoting Sustainability overall.',
                     style: TextStyle(
                       //fontSize: 30.0,
                       fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.italic,
+                      fontSize: 40,
+                      color: Colors.white,
                     ),
                   )),
               /* ElevatedButton(
@@ -68,7 +74,9 @@ class Home extends StatelessWidget {
             height: 100,
             width: 100,
             child: FloatingActionButton(
-              backgroundColor: Colors.green[600],
+              splashColor: Colors.green,
+              hoverColor: Colors.amber,
+              backgroundColor: green,
               onPressed: () {
                 gotoSecondActivity(context);
               },

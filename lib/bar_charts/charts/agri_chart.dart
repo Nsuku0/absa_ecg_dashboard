@@ -31,6 +31,7 @@ class AgriChart extends StatelessWidget {
             behaviorPosition: charts.BehaviorPosition.top,
             titleStyleSpec: const charts.TextStyleSpec(
               fontSize: 14,
+              // color: MaterialColor.,
             ),
             titleOutsideJustification:
                 charts.OutsideJustification.middleDrawArea),

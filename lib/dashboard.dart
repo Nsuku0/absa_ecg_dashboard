@@ -15,25 +15,23 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: bg,
+        // backgroundColor: bg,
         appBar: AppBar(
           title: const Text("ABSA ECG Dashboard"),
           centerTitle: true,
-          backgroundColor: pinks[2],
+          backgroundColor: reds[0],
         ),
         body: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Expanded(
-               flex: 2,
+              flex: 2,
               child: PieHome(),
             ),
-
             const Expanded(
               flex: 4,
               child: BarHome(),
             ),
-
             Expanded(
               flex: 2,
               child: Container(color: Colors.white, child: const CompanyInfo()),
@@ -42,4 +40,3 @@ class _DashboardState extends State<Dashboard> {
         ));
   }
 }
-

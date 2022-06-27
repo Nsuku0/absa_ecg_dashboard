@@ -9,66 +9,101 @@ import 'manufacturing_chart.dart';
 import 'mining_chart.dart';
 
 class BarHome extends StatelessWidget {
-  const BarHome ({Key? key}): super(key:key);
+  const BarHome({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      backgroundColor: bg,
       appBar: AppBar(
         title: const Text("Detailed Sector Information"),
-        backgroundColor: headings_orange,
+        backgroundColor: reds[2],
         automaticallyImplyLeading: false,
         centerTitle: true,
-
       ),
-
-
-
       body: SingleChildScrollView(
-
         child: Column(
-
           children: [
-
-            const SizedBox(height: 50,),
-
-            SizedBox(
-              height: 500,
-              child: AgriChart(),
+            const SizedBox(
+              height: 50,
             ),
 
-            const SizedBox(height: 50,),
-
             SizedBox(
-              height: 500,
-              child: BankingChart(),
+                height: 500,
+                child: DecoratedBox(
+                  decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: AgriChart(),
+                )),
+
+            const SizedBox(
+              height: 50,
             ),
 
-            const SizedBox(height: 50,),
-
-            SizedBox(height: 500, child: ManufacturingChart()),
-
-            const SizedBox(height: 50,),
-
             SizedBox(
-              height: 500,
-              child: MiningChart(),
+                height: 500,
+                child: DecoratedBox(
+                  decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: BankingChart(),
+                )),
+
+            const SizedBox(
+              height: 50,
             ),
 
-            const SizedBox(height: 50,),
+            SizedBox(
+                height: 500,
+                child: DecoratedBox(
+                  decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: ManufacturingChart(),
+                )),
 
-            SizedBox(height: 500, child: RetailChart()),
+            const SizedBox(
+              height: 50,
+            ),
 
-            const SizedBox(height: 50,),
+            SizedBox(
+                height: 500,
+                child: DecoratedBox(
+                  decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: MiningChart(),
+                )),
 
-            SizedBox(height: 500, child: TMTChart()), //
+            const SizedBox(
+              height: 50,
+            ),
+
+            SizedBox(
+                height: 500,
+                child: DecoratedBox(
+                  decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: RetailChart(),
+                )),
+
+            const SizedBox(
+              height: 50,
+            ),
+
+            SizedBox(
+                height: 500,
+                child: DecoratedBox(
+                  decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: TMTChart(),
+                )), //
           ],
         ),
       ),
-
-
-
     );
   }
 }

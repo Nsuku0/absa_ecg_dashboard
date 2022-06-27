@@ -137,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: bg,
       appBar: AppBar(
-        backgroundColor: headings_orange,
+        backgroundColor: reds[2],
         title: const Text(
           "Company Information",
         ),
@@ -151,9 +151,10 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
+              //FNB
               SizedBox(
                 height: 50,
-                width: 500,
+                width: 100,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -175,8 +176,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     SizedBox(
                                         height: 100,
                                         width: 500,
-                                        child:
-                                            Image.asset("icons/chemwes.png")),
+                                        child: Image.asset("icons/fnb.png")),
                                     Text(compSummary),
                                     const SizedBox(
                                       height: 20,
@@ -220,7 +220,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Row(
                       children: const [
                         ImageIcon(
-                          AssetImage("icons/chemwes.png"),
+                          AssetImage("icons/fnb.png"),
                           color: Colors.green,
                         ),
                         Text(
@@ -233,9 +233,10 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
+              //Nedbank
               SizedBox(
                 height: 50,
-                width: 500,
+                width: 100,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -248,6 +249,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                     vertical: 20.0, horizontal: 60.0),
                                 child: Column(
                                   children: [
+                                    const ImageIcon(
+                                      AssetImage("icons/nedbank.png"),
+                                      color: Colors.green,
+                                    ),
                                     const Text(
                                       'Nedbank',
                                       style: TextStyle(
@@ -257,8 +262,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                     SizedBox(
                                         height: 100,
                                         width: 500,
-                                        child: Image.asset(
-                                            "icons/richardsbay.png")),
+                                        child:
+                                            Image.asset("icons/nedbank.jpg")),
                                     Text(compSummary),
                                     const SizedBox(
                                       height: 20,
@@ -302,7 +307,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Row(
                       children: const [
                         ImageIcon(
-                          AssetImage("icons/richardsbay.png"),
+                          AssetImage("icons/nedbank.jpg"),
                           color: Colors.green,
                         ),
                         Text(
@@ -315,9 +320,10 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
+              //anglo american
               SizedBox(
                 height: 50,
-                width: 500,
+                width: 100,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -332,7 +338,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Column(
                                   children: [
                                     const Text(
-                                      'ANGLO AMERICAN (PTY) LTD',
+                                      'Anglo American',
                                       style: TextStyle(
                                         fontSize: 20,
                                       ),
@@ -340,8 +346,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     SizedBox(
                                         height: 100,
                                         width: 500,
-                                        child:
-                                            Image.asset("icons/afmetco.png")),
+                                        child: Image.asset("icons/anglo.jpg")),
                                     Text(compSummary),
                                     const SizedBox(
                                       height: 20,
@@ -385,7 +390,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Row(
                       children: const [
                         ImageIcon(
-                          AssetImage("icons/afmetco.png"),
+                          AssetImage("icons/anglo.jpg"),
                           color: Colors.green,
                         ),
                         Text(
@@ -398,9 +403,10 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
+              //pernod ricard
               SizedBox(
                 height: 50,
-                width: 500,
+                width: 200,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -415,14 +421,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Column(
                                   children: [
                                     const Text(
-                                      'PERNOD RICARD SOUTH AFRICA (PTY) LTD',
+                                      'Pernod Ricard SA',
                                       style: TextStyle(
                                         fontSize: 20,
                                       ),
                                     ),
                                     SizedBox(
-                                        height: 100,
-                                        width: 500,
+                                        height: 370,
+                                        width: 150,
                                         child: Image.asset("icons/pernod.png")),
                                     Text(compSummary),
                                     const SizedBox(
@@ -480,9 +486,10 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
+              //nestle
               SizedBox(
                 height: 50,
-                width: 500,
+                width: 100,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -497,7 +504,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Column(
                                   children: [
                                     const Text(
-                                      'NESTLE (SOUTH AFRICA) (PTY) LTD',
+                                      'Nestle SA',
                                       style: TextStyle(
                                         fontSize: 20,
                                       ),
@@ -562,9 +569,10 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
+              //exxaro
               SizedBox(
                 height: 50,
-                width: 500,
+                width: 100,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -578,7 +586,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Column(
                                   children: [
                                     const Text(
-                                      'Exarro SA',
+                                      'Exxaro SA',
                                       style: TextStyle(
                                         fontSize: 20,
                                       ),
@@ -586,8 +594,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     SizedBox(
                                         height: 100,
                                         width: 500,
-                                        child: Image.asset(
-                                            "icons/worldhardwood.png")),
+                                        child: Image.asset("icons/exxaro.png")),
                                     Text(compSummary),
                                     const SizedBox(
                                       height: 20,
@@ -631,7 +638,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Row(
                       children: const [
                         ImageIcon(
-                          AssetImage("icons/worldhardwood.png"),
+                          AssetImage("icons/exxaro.png"),
                           color: Colors.green,
                         ),
                         Text(
@@ -644,9 +651,10 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
+              //isuzu
               SizedBox(
                 height: 50,
-                width: 500,
+                width: 100,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -661,7 +669,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Column(
                                   children: [
                                     const Text(
-                                      'ISUZU MOTORS(SOUTH AFRICA)(PTY)(LTD)',
+                                      'Isuzu Motors SA',
                                       style: TextStyle(
                                         fontSize: 20,
                                       ),
@@ -726,9 +734,10 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
+              //country bird
               SizedBox(
                 height: 50,
-                width: 500,
+                width: 100,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -743,7 +752,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Column(
                                   children: [
                                     const Text(
-                                      'COUNTRY BIRD HOLDINGS (PTY) LTD',
+                                      'Country Bird Holdings',
                                       style: TextStyle(
                                         fontSize: 20,
                                       ),
@@ -809,9 +818,10 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
+              // karan beef
               SizedBox(
                 height: 50,
-                width: 500,
+                width: 100,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -826,7 +836,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Column(
                                   children: [
                                     const Text(
-                                      'KARAN BEEF FEEDLOT',
+                                      'Karan Beef Feedlot',
                                       style: TextStyle(
                                         fontSize: 20,
                                       ),
@@ -892,9 +902,10 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
+              //afgri grain
               SizedBox(
                 height: 50,
-                width: 500,
+                width: 100,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -909,7 +920,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Column(
                                   children: [
                                     const Text(
-                                      'AFGRI GRAIN MARKETING (PTY) LTD',
+                                      'Afgri Grain Marketing',
                                       style: TextStyle(
                                         fontSize: 20,
                                       ),
@@ -974,9 +985,10 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
+              //implats
               SizedBox(
                 height: 50,
-                width: 500,
+                width: 100,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -990,7 +1002,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Column(
                                   children: [
                                     const Text(
-                                      'IMPLATS',
+                                      'Implats',
                                       style: TextStyle(
                                         fontSize: 20,
                                       ),
@@ -998,8 +1010,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                     SizedBox(
                                         height: 100,
                                         width: 500,
-                                        child: Image.asset(
-                                            "icons/homechoice.png")),
+                                        child:
+                                            Image.asset("icons/implats.png")),
                                     Text(compSummary),
                                     const SizedBox(
                                       height: 20,
@@ -1043,8 +1055,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Row(
                       children: const [
                         ImageIcon(
-                          AssetImage("icons/homechoice.png"),
-                          color: Colors.green,
+                          AssetImage("icons/implats.png"),
+                          color: Colors.white,
                         ),
                         Text(
                           'IMPLATS',
@@ -1056,9 +1068,10 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
+              //telkom
               SizedBox(
                 height: 50,
-                width: 500,
+                width: 100,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -1073,7 +1086,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Column(
                                   children: [
                                     const Text(
-                                      'TELKOM SA SOC LTD',
+                                      'Telkom SA',
                                       style: TextStyle(
                                         fontSize: 20,
                                       ),
@@ -1138,9 +1151,10 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
+
               SizedBox(
                 height: 50,
-                width: 500,
+                width: 100,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -1155,7 +1169,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Column(
                                   children: [
                                     const Text(
-                                      'VODACOM(PTY) LTD',
+                                      'Vodacom',
                                       style: TextStyle(
                                         fontSize: 20,
                                       ),
@@ -1221,9 +1235,10 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
+              //woolies
               SizedBox(
                 height: 50,
-                width: 500,
+                width: 100,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -1238,7 +1253,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Column(
                                   children: [
                                     const Text(
-                                      'WOOLWORTHS HOLDINGS LIMITED',
+                                      'Woolworths',
                                       style: TextStyle(
                                         fontSize: 20,
                                       ),
@@ -1304,9 +1319,10 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
+              //mr price
               SizedBox(
                 height: 50,
-                width: 500,
+                width: 100,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -1321,7 +1337,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Column(
                                   children: [
                                     const Text(
-                                      'MR PRICE GROUP LTD',
+                                      'Mr Price Group',
                                       style: TextStyle(
                                         fontSize: 20,
                                       ),
@@ -1387,9 +1403,10 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
+              //shoprite
               SizedBox(
                 height: 50,
-                width: 500,
+                width: 100,
                 child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -1404,7 +1421,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Column(
                                   children: [
                                     const Text(
-                                      'SHOPRITE HOLDINGS',
+                                      'Shoprite',
                                       style: TextStyle(
                                         fontSize: 20,
                                       ),
