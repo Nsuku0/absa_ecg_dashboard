@@ -14,37 +14,53 @@ class BarHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
-        title: const Text("Detailed Sector Information (Left bar =2020, Right bar = 2021)"),
+        title: const Text("Detailed Sector Information"),
         backgroundColor: headings_orange,
         automaticallyImplyLeading: false,
         centerTitle: true,
 
       ),
 
+
+
       body: SingleChildScrollView(
+
         child: Column(
 
           children: [
+
+            const SizedBox(height: 50,),
 
             SizedBox(
               height: 500,
               child: AgriChart(),
             ),
 
+            const SizedBox(height: 50,),
+
             SizedBox(
               height: 500,
               child: BankingChart(),
             ),
 
+            const SizedBox(height: 50,),
+
             SizedBox(height: 500, child: ManufacturingChart()),
+
+            const SizedBox(height: 50,),
 
             SizedBox(
               height: 500,
               child: MiningChart(),
             ),
 
+            const SizedBox(height: 50,),
+
             SizedBox(height: 500, child: RetailChart()),
+
+            const SizedBox(height: 50,),
 
             SizedBox(height: 500, child: TMTChart()), //
           ],
