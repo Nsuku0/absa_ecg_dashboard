@@ -17,21 +17,7 @@ class CompanyInfo extends StatelessWidget {
     );
   }
 }
-/*
 
-void readExcelFile() {
-  ByteData data = await rootBundle.load("assets/companyData.xlsx");
-  var bytes = data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
-  var excel = Excel.decodeBytes(bytes);
-  int j =0;
-  int row = 18;
-  int col = 2;
-  var listVar = List.generate(row, (i) => List(col), growable:false);
-  for (var table in excel.tables.keys) {
-    //TODO: add excel code
-  }
-}
- */
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -48,110 +34,109 @@ class _MyHomePageState extends State<MyHomePage> {
 
   // List of items in our dropdown menu
   var companyList = [
-    'SOUTH AFRICAN RUGBY UNION',
-    'CORPORATE LIQUIDATORS (PTY) LTD',
-    'CHEMWES (PTY) LTD',
-    'RICHARDS BAY TITANIUM (PTY) LTD',
-    'AFMETCO (PTY) LTD',
+    'FNB',
+    'Nedbank',
+    'ANGLO AMERICAN (PTY) LTD',
+    'Exarro SA',
     'PERNOD RICARD SOUTH AFRICA (PTY) LTD',
     'NESTLE (SOUTH AFRICA) (PTY) LTD',
-    'WORLD HARDWOOD (PTY) LTD',
     'ISUZU MOTORS(SOUTH AFRICA)(PTY)(LTD)',
     'COUNTRY BIRD HOLDINGS (PTY) LTD',
     'KARAN BEEF FEEDLOT',
     'AFGRI GRAIN MARKETING (PTY) LTD',
-    'HOMECHOICE (PTY)LTD',
+    'MTN',
     'TELKOM SA SOC LTD',
     'VODACOM(PTY) LTD',
-    'WOOLWORTHS GROUP',
+    'WOOLWORTHS HOLDINGS LIMITED',
     'MR PRICE GROUP LTD',
-    'SHOPRITE CHECKERS (PTY)LTD',
-
+    'SHOPRITE HOLDINGS',
+    'IMPLATS',
   ];
 
   //The combined scope emmissions for 2021 (scope 1 + scope 2)
   var combinedScope2021 = [
-    6660,
-    112070,
-    2304286,
-    995000,
-    995,
-    2105,
-    432425,
-    67847,
-    977093,
-    656524,
-    1133570,
-    108520,
-    609739,
-    41125045,
-    92068,
-    2205260,
-    3754877,
+    0.07,
+    1.12,
+    23.04,
+    9.95,
+    0.01,
+    0.02,
+    4.32,
+    0.68,
+    9.77,
+    6.57,
+    11.34,
+    1.09,
+    6.10,
+    411.25,
+    0.92,
+    22.05,
+    37.55,
+
   ];
 
   //The combined scope emissions for 2020 (scope 1 + scope 2)
 
   var combinedScope2020 = [
-    8472,
-    119315,
-    2304286,
-    1035000,
-    1420,
-    2134,
-    442938,
-    76721,
-    50489,
-    656142,
-    1112250,
-    596101,
-    610892,
-    486761,
-    105070,
-    2331203,
-    3305814,
+    0.08,
+    1.19,
+    23.04,
+    10.35,
+    0.01,
+    0.02,
+    4.43,
+    0.77,
+    0.50,
+    6.56,
+    11.12,
+    5.96,
+    6.11,
+    4.87,
+    1.05,
+    23.31,
+    33.06,
 
   ];
 
   var rev2020 = [
-    813,
-    90700,
-    318164,
-    5652,
-    90850,
+    22,
+    24,
+    96286,
     28924,
-    50882,
-    23984,
-    1267,
-    51400,
-    31839,
+    4818,
+    7240,
+    2515,
+    2685,
+    1767,
     22963,
-    0,
-    0,
-    0,
-    919.751,
+    179361,
+    43,
+    91,
+    74058,
     22963,
-    155409,
+    158310,
+    69851,
+
   ];
   var rev2021 = [
-    500,
-    98300,
-    282536,
-    4953,
-    86590,
+    24,
+    25,
+    4414,
     32771,
-    107078,
-    26.278,
-    1368,
-    53400,
-    33974,
+    3424,
+    7241,
+    2257,
+    2359,
+    33973,
     22827,
-    3.432,
-    43.222,
-    98.30,
-    790.84,
+    181646,
+    43,
+    98,
+    80942,
     22306,
-    168030,
+    171188,
+    129575,
+
   ];
 
   @override
@@ -173,6 +158,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             children: [
 
+
               const SizedBox(
                 height: 20,
               ),
@@ -184,22 +170,21 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: ElevatedButton(onPressed: (){
                   showModalBottomSheet(context: context, builder: (context) {
 
-                    String compSummary = getCompInfo('SOUTH AFRICAN RUGBY UNION');
+                    String compSummary = getCompInfo('FNB');
                     return SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
                         child:Column(
                           children:  [
-                            const Text('SOUTH AFRICAN RUGBY UNION', style: TextStyle(fontSize: 20, ),),
+                            const Text('FNB', style: TextStyle(fontSize: 20, ),),
                             SizedBox(
                                 height: 100,
                                 width: 500,
-                                child: Image.asset("icons/sarugby.png")),
+                                child: Image.asset("icons/chemwes.png")),
                             Text(compSummary),
-
                             const SizedBox(height: 20,),
 
-                            const Text('Scope Emission Scale in Metric Tons CO2'),
+                            const Text('Scope Emission Scale in 100k Metric Tons CO2'),
 
                             SizedBox(
                               height: 300,
@@ -235,97 +220,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Row(
                       children:  const [
                         ImageIcon(
-                          AssetImage("icons/sarugby.png"),
-                          color: Colors.green,
-                        ),
-                        Text('SOUTH AFRICAN RUGBY UNION', style: TextStyle(color: text_col),),
-
-                      ],
-                    )
-                ),
-              ),
-
-              const SizedBox(
-                height: 20,
-              ),
-
-              SizedBox(
-                height: 50,
-                width: 500,
-
-                child: ElevatedButton(onPressed: (){
-                  showModalBottomSheet(context: context, builder: (context) {
-
-                    String compSummary = getCompInfo('CORPORATE LIQUIDATORS (PTY) LTD');
-                    return Center(
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
-                        child:Column(
-                          children:  [
-                            const Text('CORPORATE LIQUIDATORS (PTY) LTD', style: TextStyle(fontSize: 20, ),),
-                            SizedBox(
-                                height: 100,
-                                width: 500,
-                                child: Image.asset("icons/corpliqidator.png")),
-                            Text(compSummary),
-                          ],
-                        ) ,
-
-                      ),
-                    );
-                  });
-                },
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    child: Row(
-                      children:  const [
-                        ImageIcon(
-                          AssetImage("icons/corpliqidator.png"),
-                          color: Colors.green,
-                        ),
-                        Text('CORPORATE LIQUIDATORS (PTY) LTD', style: TextStyle(color: text_col),),
-
-                      ],
-                    )),
-              ),
-
-              const SizedBox(
-                height: 20,
-              ),
-
-              SizedBox(
-                height: 50,
-                width: 500,
-
-                child: ElevatedButton(onPressed: (){
-                  showModalBottomSheet(context: context, builder: (context) {
-
-                    String compSummary = getCompInfo('CHEMWES (PTY) LTD');
-                    return Center(
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
-                        child:Column(
-                          children:  [
-                            const Text('CHEMWES (PTY) LTD', style: TextStyle(fontSize: 20, ),),
-                            SizedBox(
-                                height: 100,
-                                width: 500,
-                                child: Image.asset("icons/chemwes.png")),
-                            Text(compSummary),
-                          ],
-                        ) ,
-
-                      ),
-                    );
-                  });
-                },
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    child: Row(
-                      children:  const [
-                        ImageIcon(
                           AssetImage("icons/chemwes.png"),
                           color: Colors.green,
                         ),
-                        Text('CHEMWES (PTY) LTD', style: TextStyle(color: text_col),),
+                        Text('FNB', style: TextStyle(color: text_col),),
 
                       ],
                     )),
@@ -342,18 +240,45 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: ElevatedButton(onPressed: (){
                   showModalBottomSheet(context: context, builder: (context) {
 
-                    String compSummary = getCompInfo('RICHARDS BAY TITANIUM (PTY) LTD');
-                    return Center(
+                    String compSummary = getCompInfo('Nedbank');
+                    return SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
                         child:Column(
                           children:  [
-                            const Text('RICHARDS BAY TITANIUM (PTY) LTD', style: TextStyle(fontSize: 20, ),),
+                            const Text('Nedbank', style: TextStyle(fontSize: 20, ),),
                             SizedBox(
                                 height: 100,
                                 width: 500,
                                 child: Image.asset("icons/richardsbay.png")),
                             Text(compSummary),
+                            const SizedBox(height: 20,),
+
+                            const Text('Scope Emission Scale in 100k Metric Tons CO2'),
+
+                            SizedBox(
+                              height: 300,
+                              width: 500,
+                              child: Center(
+                                child: PrettyGauge(
+                                  gaugeSize: 300,
+                                  minValue: 0,
+                                  maxValue: 40,
+                                  segments: [
+                                    GaugeSegment('Normal', 6.67, Colors.green),
+                                    GaugeSegment('Concerning', 13.33, Colors.yellowAccent),
+                                    GaugeSegment('Over emitting', 20, Colors.red),
+
+                                  ],
+                                  valueWidget: Text(
+                                    scopeValue2021.toStringAsFixed(1),
+                                    style: const TextStyle(fontSize: 40),
+                                  ),
+                                  currentValue: scopeValue2021.toDouble(),
+                                  needleColor: Colors.blue,
+                                ),
+                              ),
+                            ),
                           ],
                         ) ,
 
@@ -368,7 +293,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           AssetImage("icons/richardsbay.png"),
                           color: Colors.green,
                         ),
-                        Text('RICHARDS BAY TITANIUM (PTY) LTD', style: TextStyle(color: text_col),),
+                        Text('Nedbank', style: TextStyle(color: text_col),),
 
                       ],
                     )),
@@ -385,18 +310,45 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: ElevatedButton(onPressed: (){
                   showModalBottomSheet(context: context, builder: (context) {
 
-                    String compSummary = getCompInfo('AFMETCO (PTY) LTD');
-                    return Center(
+                    String compSummary = getCompInfo('ANGLO AMERICAN (PTY) LTD');
+                    return SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
                         child:Column(
                           children:  [
-                            const Text('AFMETCO (PTY) LTD', style: TextStyle(fontSize: 20, ),),
+                            const Text('ANGLO AMERICAN (PTY) LTD', style: TextStyle(fontSize: 20, ),),
                             SizedBox(
                                 height: 100,
                                 width: 500,
                                 child: Image.asset("icons/afmetco.png")),
                             Text(compSummary),
+                            const SizedBox(height: 20,),
+
+                            const Text('Scope Emission Scale in 100k Metric Tons CO2'),
+
+                            SizedBox(
+                              height: 300,
+                              width: 500,
+                              child: Center(
+                                child: PrettyGauge(
+                                  gaugeSize: 300,
+                                  minValue: 0,
+                                  maxValue: 40,
+                                  segments: [
+                                    GaugeSegment('Normal', 6.67, Colors.green),
+                                    GaugeSegment('Concerning', 13.33, Colors.yellowAccent),
+                                    GaugeSegment('Over emitting', 20, Colors.red),
+
+                                  ],
+                                  valueWidget: Text(
+                                    scopeValue2021.toStringAsFixed(1),
+                                    style: const TextStyle(fontSize: 40),
+                                  ),
+                                  currentValue: scopeValue2021.toDouble(),
+                                  needleColor: Colors.blue,
+                                ),
+                              ),
+                            ),
                           ],
                         ) ,
 
@@ -411,7 +363,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           AssetImage("icons/afmetco.png"),
                           color: Colors.green,
                         ),
-                        Text('AFMETCO (PTY) LTD', style: TextStyle(color: text_col),),
+                        Text('ANGLO AMERICAN (PTY) LTD', style: TextStyle(color: text_col),),
 
                       ],
                     )),
@@ -429,7 +381,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   showModalBottomSheet(context: context, builder: (context) {
 
                     String compSummary = getCompInfo('PERNOD RICARD SOUTH AFRICA (PTY) LTD');
-                    return Center(
+                    return SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
                         child:Column(
@@ -440,6 +392,33 @@ class _MyHomePageState extends State<MyHomePage> {
                                 width: 500,
                                 child: Image.asset("icons/pernod.png")),
                             Text(compSummary),
+                            const SizedBox(height: 20,),
+
+                            const Text('Scope Emission Scale in 100k Metric Tons CO2'),
+
+                            SizedBox(
+                              height: 300,
+                              width: 500,
+                              child: Center(
+                                child: PrettyGauge(
+                                  gaugeSize: 300,
+                                  minValue: 0,
+                                  maxValue: 40,
+                                  segments: [
+                                    GaugeSegment('Normal', 6.67, Colors.green),
+                                    GaugeSegment('Concerning', 13.33, Colors.yellowAccent),
+                                    GaugeSegment('Over emitting', 20, Colors.red),
+
+                                  ],
+                                  valueWidget: Text(
+                                    scopeValue2021.toStringAsFixed(1),
+                                    style: const TextStyle(fontSize: 40),
+                                  ),
+                                  currentValue: scopeValue2021.toDouble(),
+                                  needleColor: Colors.blue,
+                                ),
+                              ),
+                            ),
                           ],
                         ) ,
 
@@ -473,7 +452,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   showModalBottomSheet(context: context, builder: (context) {
 
                     String compSummary = getCompInfo('NESTLE (SOUTH AFRICA) (PTY) LTD');
-                    return Center(
+                    return SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
                         child:Column(
@@ -484,6 +463,33 @@ class _MyHomePageState extends State<MyHomePage> {
                                 width: 500,
                                 child: Image.asset("icons/nestle.png")),
                             Text(compSummary),
+                            const SizedBox(height: 20,),
+
+                            const Text('Scope Emission Scale in 100k Metric Tons CO2'),
+
+                            SizedBox(
+                              height: 300,
+                              width: 500,
+                              child: Center(
+                                child: PrettyGauge(
+                                  gaugeSize: 300,
+                                  minValue: 0,
+                                  maxValue: 40,
+                                  segments: [
+                                    GaugeSegment('Normal', 6.67, Colors.green),
+                                    GaugeSegment('Concerning', 13.33, Colors.yellowAccent),
+                                    GaugeSegment('Over emitting', 20, Colors.red),
+
+                                  ],
+                                  valueWidget: Text(
+                                    scopeValue2021.toStringAsFixed(1),
+                                    style: const TextStyle(fontSize: 40),
+                                  ),
+                                  currentValue: scopeValue2021.toDouble(),
+                                  needleColor: Colors.blue,
+                                ),
+                              ),
+                            ),
                           ],
                         ) ,
 
@@ -516,18 +522,45 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: ElevatedButton(onPressed: (){
                   showModalBottomSheet(context: context, builder: (context) {
 
-                    String compSummary = getCompInfo('WORLD HARDWOOD (PTY) LTD');
-                    return Center(
+                    String compSummary = getCompInfo('Exarro SA');
+                    return SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
                         child:Column(
                           children:  [
-                            const Text('WORLD HARDWOOD (PTY) LTD', style: TextStyle(fontSize: 20, ),),
+                            const Text('Exarro SA', style: TextStyle(fontSize: 20, ),),
                             SizedBox(
                                 height: 100,
                                 width: 500,
                                 child: Image.asset("icons/worldhardwood.png")),
                             Text(compSummary),
+                            const SizedBox(height: 20,),
+
+                            const Text('Scope Emission Scale in 100k Metric Tons CO2'),
+
+                            SizedBox(
+                              height: 300,
+                              width: 500,
+                              child: Center(
+                                child: PrettyGauge(
+                                  gaugeSize: 300,
+                                  minValue: 0,
+                                  maxValue: 40,
+                                  segments: [
+                                    GaugeSegment('Normal', 6.67, Colors.green),
+                                    GaugeSegment('Concerning', 13.33, Colors.yellowAccent),
+                                    GaugeSegment('Over emitting', 20, Colors.red),
+
+                                  ],
+                                  valueWidget: Text(
+                                    scopeValue2021.toStringAsFixed(1),
+                                    style: const TextStyle(fontSize: 40),
+                                  ),
+                                  currentValue: scopeValue2021.toDouble(),
+                                  needleColor: Colors.blue,
+                                ),
+                              ),
+                            ),
                           ],
                         ) ,
 
@@ -542,7 +575,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           AssetImage("icons/worldhardwood.png"),
                           color: Colors.green,
                         ),
-                        Text('WORLD HARDWOOD (PTY) LTD', style: TextStyle(color: text_col),),
+                        Text('Exarro SA', style: TextStyle(color: text_col),),
 
                       ],
                     )),
@@ -561,7 +594,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   showModalBottomSheet(context: context, builder: (context) {
 
                     String compSummary = getCompInfo('ISUZU MOTORS(SOUTH AFRICA)(PTY)(LTD)');
-                    return Center(
+                    return SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
                         child:Column(
@@ -572,6 +605,33 @@ class _MyHomePageState extends State<MyHomePage> {
                                 width: 500,
                                 child: Image.asset("icons/isuzu.jpeg")),
                             Text(compSummary),
+                            const SizedBox(height: 20,),
+
+                            const Text('Scope Emission Scale in 100k Metric Tons CO2'),
+
+                            SizedBox(
+                              height: 300,
+                              width: 500,
+                              child: Center(
+                                child: PrettyGauge(
+                                  gaugeSize: 300,
+                                  minValue: 0,
+                                  maxValue: 40,
+                                  segments: [
+                                    GaugeSegment('Normal', 6.67, Colors.green),
+                                    GaugeSegment('Concerning', 13.33, Colors.yellowAccent),
+                                    GaugeSegment('Over emitting', 20, Colors.red),
+
+                                  ],
+                                  valueWidget: Text(
+                                    scopeValue2021.toStringAsFixed(1),
+                                    style: const TextStyle(fontSize: 40),
+                                  ),
+                                  currentValue: scopeValue2021.toDouble(),
+                                  needleColor: Colors.blue,
+                                ),
+                              ),
+                            ),
                           ],
                         ) ,
 
@@ -605,7 +665,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   showModalBottomSheet(context: context, builder: (context) {
 
                     String compSummary = getCompInfo('COUNTRY BIRD HOLDINGS (PTY) LTD');
-                    return Center(
+                    return SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
                         child:Column(
@@ -616,6 +676,33 @@ class _MyHomePageState extends State<MyHomePage> {
                                 width: 500,
                                 child: Image.asset("icons/countrybird.png")),
                             Text(compSummary),
+                            const SizedBox(height: 20,),
+
+                            const Text('Scope Emission Scale in 100k Metric Tons CO2'),
+
+                            SizedBox(
+                              height: 300,
+                              width: 500,
+                              child: Center(
+                                child: PrettyGauge(
+                                  gaugeSize: 300,
+                                  minValue: 0,
+                                  maxValue: 40,
+                                  segments: [
+                                    GaugeSegment('Normal', 6.67, Colors.green),
+                                    GaugeSegment('Concerning', 13.33, Colors.yellowAccent),
+                                    GaugeSegment('Over emitting', 20, Colors.red),
+
+                                  ],
+                                  valueWidget: Text(
+                                    scopeValue2021.toStringAsFixed(1),
+                                    style: const TextStyle(fontSize: 40),
+                                  ),
+                                  currentValue: scopeValue2021.toDouble(),
+                                  needleColor: Colors.blue,
+                                ),
+                              ),
+                            ),
                           ],
                         ) ,
 
@@ -650,7 +737,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   showModalBottomSheet(context: context, builder: (context) {
 
                     String compSummary = getCompInfo('KARAN BEEF FEEDLOT');
-                    return Center(
+                    return SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
                         child:Column(
@@ -661,6 +748,33 @@ class _MyHomePageState extends State<MyHomePage> {
                                 width: 500,
                                 child: Image.asset("icons/karan_beef.png")),
                             Text(compSummary),
+                            const SizedBox(height: 20,),
+
+                            const Text('Scope Emission Scale in 100k Metric Tons CO2'),
+
+                            SizedBox(
+                              height: 300,
+                              width: 500,
+                              child: Center(
+                                child: PrettyGauge(
+                                  gaugeSize: 300,
+                                  minValue: 0,
+                                  maxValue: 40,
+                                  segments: [
+                                    GaugeSegment('Normal', 6.67, Colors.green),
+                                    GaugeSegment('Concerning', 13.33, Colors.yellowAccent),
+                                    GaugeSegment('Over emitting', 20, Colors.red),
+
+                                  ],
+                                  valueWidget: Text(
+                                    scopeValue2021.toStringAsFixed(1),
+                                    style: const TextStyle(fontSize: 40),
+                                  ),
+                                  currentValue: scopeValue2021.toDouble(),
+                                  needleColor: Colors.blue,
+                                ),
+                              ),
+                            ),
                           ],
                         ) ,
 
@@ -694,7 +808,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   showModalBottomSheet(context: context, builder: (context) {
 
                     String compSummary = getCompInfo('AFGRI GRAIN MARKETING (PTY) LTD');
-                    return Center(
+                    return SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
                         child:Column(
@@ -705,6 +819,33 @@ class _MyHomePageState extends State<MyHomePage> {
                                 width: 500,
                                 child: Image.asset("icons/afgri.jpg")),
                             Text(compSummary),
+                            const SizedBox(height: 20,),
+
+                            const Text('Scope Emission Scale in 100k Metric Tons CO2'),
+
+                            SizedBox(
+                              height: 300,
+                              width: 500,
+                              child: Center(
+                                child: PrettyGauge(
+                                  gaugeSize: 300,
+                                  minValue: 0,
+                                  maxValue: 40,
+                                  segments: [
+                                    GaugeSegment('Normal', 6.67, Colors.green),
+                                    GaugeSegment('Concerning', 13.33, Colors.yellowAccent),
+                                    GaugeSegment('Over emitting', 20, Colors.red),
+
+                                  ],
+                                  valueWidget: Text(
+                                    scopeValue2021.toStringAsFixed(1),
+                                    style: const TextStyle(fontSize: 40),
+                                  ),
+                                  currentValue: scopeValue2021.toDouble(),
+                                  needleColor: Colors.blue,
+                                ),
+                              ),
+                            ),
                           ],
                         ) ,
 
@@ -737,18 +878,45 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: ElevatedButton(onPressed: (){
                   showModalBottomSheet(context: context, builder: (context) {
 
-                    String compSummary = getCompInfo('HOMECHOICE (PTY)LTD');
-                    return Center(
+                    String compSummary = getCompInfo('IMPLATS');
+                    return SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
                         child:Column(
                           children:  [
-                            const Text('HOMECHOICE (PTY)LTD', style: TextStyle(fontSize: 20, ),),
+                            const Text('IMPLATS', style: TextStyle(fontSize: 20, ),),
                             SizedBox(
                                 height: 100,
                                 width: 500,
                                 child: Image.asset("icons/homechoice.png")),
                             Text(compSummary),
+                            const SizedBox(height: 20,),
+
+                            const Text('Scope Emission Scale in 100k Metric Tons CO2'),
+
+                            SizedBox(
+                              height: 300,
+                              width: 500,
+                              child: Center(
+                                child: PrettyGauge(
+                                  gaugeSize: 300,
+                                  minValue: 0,
+                                  maxValue: 40,
+                                  segments: [
+                                    GaugeSegment('Normal', 6.67, Colors.green),
+                                    GaugeSegment('Concerning', 13.33, Colors.yellowAccent),
+                                    GaugeSegment('Over emitting', 20, Colors.red),
+
+                                  ],
+                                  valueWidget: Text(
+                                    scopeValue2021.toStringAsFixed(1),
+                                    style: const TextStyle(fontSize: 40),
+                                  ),
+                                  currentValue: scopeValue2021.toDouble(),
+                                  needleColor: Colors.blue,
+                                ),
+                              ),
+                            ),
                           ],
                         ) ,
 
@@ -763,7 +931,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           AssetImage("icons/homechoice.png"),
                           color: Colors.green,
                         ),
-                        Text('HOMECHOICE (PTY)LTD', style: TextStyle(color: text_col),),
+                        Text('IMPLATS', style: TextStyle(color: text_col),),
 
                       ],
                     )),
@@ -783,7 +951,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   showModalBottomSheet(context: context, builder: (context) {
 
                     String compSummary = getCompInfo('TELKOM SA SOC LTD');
-                    return Center(
+                    return SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
                         child:Column(
@@ -794,6 +962,33 @@ class _MyHomePageState extends State<MyHomePage> {
                                 width: 500,
                                 child: Image.asset("icons/telkom.jpg")),
                             Text(compSummary),
+                            const SizedBox(height: 20,),
+
+                            const Text('Scope Emission Scale in 100k Metric Tons CO2'),
+
+                            SizedBox(
+                              height: 300,
+                              width: 500,
+                              child: Center(
+                                child: PrettyGauge(
+                                  gaugeSize: 300,
+                                  minValue: 0,
+                                  maxValue: 40,
+                                  segments: [
+                                    GaugeSegment('Normal', 6.67, Colors.green),
+                                    GaugeSegment('Concerning', 13.33, Colors.yellowAccent),
+                                    GaugeSegment('Over emitting', 20, Colors.red),
+
+                                  ],
+                                  valueWidget: Text(
+                                    scopeValue2021.toStringAsFixed(1),
+                                    style: const TextStyle(fontSize: 40),
+                                  ),
+                                  currentValue: scopeValue2021.toDouble(),
+                                  needleColor: Colors.blue,
+                                ),
+                              ),
+                            ),
                           ],
                         ) ,
 
@@ -827,7 +1022,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   showModalBottomSheet(context: context, builder: (context) {
 
                     String compSummary = getCompInfo('VODACOM(PTY) LTD');
-                    return Center(
+                    return SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
                         child:Column(
@@ -838,6 +1033,33 @@ class _MyHomePageState extends State<MyHomePage> {
                                 width: 500,
                                 child: Image.asset("icons/vodacom.jpeg")),
                             Text(compSummary),
+                            const SizedBox(height: 20,),
+
+                            const Text('Scope Emission Scale in 100k Metric Tons CO2'),
+
+                            SizedBox(
+                              height: 300,
+                              width: 500,
+                              child: Center(
+                                child: PrettyGauge(
+                                  gaugeSize: 300,
+                                  minValue: 0,
+                                  maxValue: 40,
+                                  segments: [
+                                    GaugeSegment('Normal', 6.67, Colors.green),
+                                    GaugeSegment('Concerning', 13.33, Colors.yellowAccent),
+                                    GaugeSegment('Over emitting', 20, Colors.red),
+
+                                  ],
+                                  valueWidget: Text(
+                                    scopeValue2021.toStringAsFixed(1),
+                                    style: const TextStyle(fontSize: 40),
+                                  ),
+                                  currentValue: scopeValue2021.toDouble(),
+                                  needleColor: Colors.blue,
+                                ),
+                              ),
+                            ),
                           ],
                         ) ,
 
@@ -870,18 +1092,45 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: ElevatedButton(onPressed: (){
                   showModalBottomSheet(context: context, builder: (context) {
 
-                    String compSummary = getCompInfo('WOOLWORTHS GROUP');
-                    return Center(
+                    String compSummary = getCompInfo('WOOLWORTHS HOLDINGS LIMITED');
+                    return SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
                         child:Column(
                           children:  [
-                            const Text('WOOLWORTHS GROUP', style: TextStyle(fontSize: 20, ),),
+                            const Text('WOOLWORTHS HOLDINGS LIMITED', style: TextStyle(fontSize: 20, ),),
                             SizedBox(
                                 height: 100,
                                 width: 500,
                                 child: Image.asset('icons/woolworths.jpeg')),
                             Text(compSummary),
+                            const SizedBox(height: 20,),
+
+                            const Text('Scope Emission Scale in 100k Metric Tons CO2'),
+
+                            SizedBox(
+                              height: 300,
+                              width: 500,
+                              child: Center(
+                                child: PrettyGauge(
+                                  gaugeSize: 300,
+                                  minValue: 0,
+                                  maxValue: 40,
+                                  segments: [
+                                    GaugeSegment('Normal', 6.67, Colors.green),
+                                    GaugeSegment('Concerning', 13.33, Colors.yellowAccent),
+                                    GaugeSegment('Over emitting', 20, Colors.red),
+
+                                  ],
+                                  valueWidget: Text(
+                                    scopeValue2021.toStringAsFixed(1),
+                                    style: const TextStyle(fontSize: 40),
+                                  ),
+                                  currentValue: scopeValue2021.toDouble(),
+                                  needleColor: Colors.blue,
+                                ),
+                              ),
+                            ),
                           ],
                         ) ,
 
@@ -896,7 +1145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           AssetImage('icons/woolworths.jpeg'),
                           color: Colors.green,
                         ),
-                        Text('WOOLWORTHS GROUP', style: TextStyle(color: text_col),),
+                        Text('WOOLWORTHS HOLDINGS LIMITED', style: TextStyle(color: text_col),),
 
                       ],
                     )),
@@ -914,7 +1163,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   showModalBottomSheet(context: context, builder: (context) {
 
                     String compSummary = getCompInfo('MR PRICE GROUP LTD');
-                    return Center(
+                    return SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
                         child:Column(
@@ -925,6 +1174,33 @@ class _MyHomePageState extends State<MyHomePage> {
                                 width: 500,
                                 child: Image.asset("icons/mrprice.jpeg")),
                             Text(compSummary),
+                            const SizedBox(height: 20,),
+
+                            const Text('Scope Emission Scale in 100k Metric Tons CO2'),
+
+                            SizedBox(
+                              height: 300,
+                              width: 500,
+                              child: Center(
+                                child: PrettyGauge(
+                                  gaugeSize: 300,
+                                  minValue: 0,
+                                  maxValue: 40,
+                                  segments: [
+                                    GaugeSegment('Normal', 6.67, Colors.green),
+                                    GaugeSegment('Concerning', 13.33, Colors.yellowAccent),
+                                    GaugeSegment('Over emitting', 20, Colors.red),
+
+                                  ],
+                                  valueWidget: Text(
+                                    scopeValue2021.toStringAsFixed(1),
+                                    style: const TextStyle(fontSize: 40),
+                                  ),
+                                  currentValue: scopeValue2021.toDouble(),
+                                  needleColor: Colors.blue,
+                                ),
+                              ),
+                            ),
                           ],
                         ) ,
 
@@ -957,18 +1233,45 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: ElevatedButton(onPressed: (){
                   showModalBottomSheet(context: context, builder: (context) {
 
-                    String compSummary = getCompInfo('SHOPRITE CHECKERS (PTY)LTD');
-                    return Center(
+                    String compSummary = getCompInfo('SHOPRITE HOLDINGS');
+                    return SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
                         child:Column(
                           children:  [
-                            const Text('SHOPRITE CHECKERS (PTY)LTD', style: TextStyle(fontSize: 20, ),),
+                            const Text('SHOPRITE HOLDINGS', style: TextStyle(fontSize: 20, ),),
                             SizedBox(
                                 height: 100,
                                 width: 500,
                                 child: Image.asset("icons/shoprite_checkers.jpeg")),
                             Text(compSummary),
+                            const SizedBox(height: 20,),
+
+                            const Text('Scope Emission Scale in 100k Metric Tons CO2'),
+
+                            SizedBox(
+                              height: 300,
+                              width: 500,
+                              child: Center(
+                                child: PrettyGauge(
+                                  gaugeSize: 300,
+                                  minValue: 0,
+                                  maxValue: 40,
+                                  segments: [
+                                    GaugeSegment('Normal', 6.67, Colors.green),
+                                    GaugeSegment('Concerning', 13.33, Colors.yellowAccent),
+                                    GaugeSegment('Over emitting', 20, Colors.red),
+
+                                  ],
+                                  valueWidget: Text(
+                                    scopeValue2021.toStringAsFixed(1),
+                                    style: const TextStyle(fontSize: 40),
+                                  ),
+                                  currentValue: scopeValue2021.toDouble(),
+                                  needleColor: Colors.blue,
+                                ),
+                              ),
+                            ),
                           ],
                         ) ,
 
@@ -983,7 +1286,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           AssetImage("icons/shoprite_checkers.jpeg"),
                           color: Colors.green,
                         ),
-                        Text('SHOPRITE CHECKERS (PTY)LTD', style: TextStyle(color: text_col),),
+                        Text('SHOPRITE HOLDINGS', style: TextStyle(color: text_col),),
 
                       ],
                     )),
@@ -1027,4 +1330,5 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return summary;
   }
+}
 }
