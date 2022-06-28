@@ -232,7 +232,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //Nedbank
               SizedBox(
                 height: 50,
-                width: 120,
+                width: 80,
                 child: TextButton.icon(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white)),
@@ -310,7 +310,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //anglo american
               SizedBox(
                 height: 50,
-                width: 170,
+                width: 120,
                 child: TextButton.icon(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white)),
@@ -388,7 +388,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //pernod ricard
               SizedBox(
                 height: 50,
-                width: 170,
+                width: 150,
                 child: TextButton.icon(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white)),
@@ -466,7 +466,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //nestle
               SizedBox(
                 height: 50,
-                width: 130,
+                width: 90,
                 child: TextButton.icon(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white)),
@@ -544,7 +544,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //exxaro
               SizedBox(
                 height: 50,
-                width: 130,
+                width: 120,
                 child: TextButton.icon(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white)),
@@ -622,7 +622,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //isuzu
               SizedBox(
                 height: 50,
-                width: 170,
+                width: 100,
                 child: TextButton.icon(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white)),
@@ -700,7 +700,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //country bird
               SizedBox(
                 height: 50,
-                width: 250,
+                width: 230,
                 child: TextButton.icon(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white)),
@@ -779,7 +779,7 @@ class _MyHomePageState extends State<MyHomePage> {
               // karan beef
               SizedBox(
                 height: 50,
-                width: 200,
+                width: 100,
                 child: TextButton.icon(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white)),
@@ -859,7 +859,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //afgri grain
               SizedBox(
                 height: 50,
-                width: 200,
+                width: 140,
                 child: TextButton.icon(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white)),
@@ -938,7 +938,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //Implats
               SizedBox(
                 height: 50,
-                width: 110,
+                width: 100,
                 child: TextButton.icon(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white)),
@@ -1016,7 +1016,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //telkom
               SizedBox(
                 height: 50,
-                width: 140,
+                width: 120,
                 child: TextButton.icon(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white)),
@@ -1094,7 +1094,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //vodacom
               SizedBox(
                 height: 50,
-                width: 140,
+                width: 100,
                 child: TextButton.icon(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white)),
@@ -1172,7 +1172,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //woolies
               SizedBox(
                 height: 50,
-                width: 200,
+                width: 170,
                 child: TextButton.icon(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white)),
@@ -1316,10 +1316,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   icon: Image.asset('icons/mrprice.png'),
                   label: const Text(
-                    'Mr Price',
+                    '',
                     style: TextStyle(
                       color: Colors.black,
-                      fontWeight: FontWeight.bold,
                       fontSize: 15,
                     ),
                   ),
