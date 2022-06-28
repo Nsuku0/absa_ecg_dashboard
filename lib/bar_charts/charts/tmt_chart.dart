@@ -53,14 +53,14 @@ class TMTChart extends StatelessWidget {
     return [
       charts.Series<Emissions, String>(
         id: '2020',
-        colorFn: (_, __) => charts.ColorUtil.fromDartColor(pinks[0]),
+        colorFn: (_, __) => charts.ColorUtil.fromDartColor(barchart[0]),
         domainFn: (Emissions emission, _) => emission.name,
         measureFn: (Emissions emission, _) => emission.emissions,
         data: total_2020,
       ),
       charts.Series<Emissions, String>(
         id: '2021',
-        colorFn: (_, __) => charts.ColorUtil.fromDartColor(pinks[1]),
+        colorFn: (_, __) => charts.ColorUtil.fromDartColor(barchart[1]),
         domainFn: (Emissions emission, _) => emission.name,
         measureFn: (Emissions emission, _) => emission.emissions,
         data: total_2021,

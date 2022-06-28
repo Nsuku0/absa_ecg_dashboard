@@ -33,21 +33,21 @@ class _MyHomePageState extends State<MyHomePage> {
   var companyList = [
     'FNB',
     'Nedbank',
-    'ANGLO AMERICAN (PTY) LTD',
-    'Exarro SA',
-    'PERNOD RICARD SOUTH AFRICA (PTY) LTD',
-    'NESTLE (SOUTH AFRICA) (PTY) LTD',
-    'ISUZU MOTORS(SOUTH AFRICA)(PTY)(LTD)',
-    'COUNTRY BIRD HOLDINGS (PTY) LTD',
-    'KARAN BEEF FEEDLOT',
-    'AFGRI GRAIN MARKETING (PTY) LTD',
+    'Anglo American',
+    'Exxaro SA',
+    'Pernod Ricard SA',
+    'Nestle SA',
+    'Isuzu Motors SA',
+    'Country Bird Holdings',
+    'Karan Beef Feedlot',
+    'Afgri Grain Marketing',
     'MTN',
-    'TELKOM SA SOC LTD',
-    'VODACOM(PTY) LTD',
-    'WOOLWORTHS HOLDINGS LIMITED',
-    'MR PRICE GROUP LTD',
-    'SHOPRITE HOLDINGS',
-    'IMPLATS',
+    'Telkom SA',
+    'Vodacom',
+    'Woolworths Holdings',
+    'Mr Price',
+    'Shoprite',
+    'Implats',
   ];
 
   //The combined scope emmissions for 2021 (scope 1 + scope 2)
@@ -154,81 +154,77 @@ class _MyHomePageState extends State<MyHomePage> {
               //FNB
               SizedBox(
                 height: 50,
-                width: 100,
-                child: ElevatedButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            String compSummary = getCompInfo('FNB');
-                            return SingleChildScrollView(
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 60.0),
-                                child: Column(
-                                  children: [
-                                    const Text(
-                                      'FNB',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                      ),
+                width: 120,
+                child: TextButton.icon(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white)),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          String compSummary = getCompInfo('FNB');
+                          return SingleChildScrollView(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20.0, horizontal: 60.0),
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'FNB',
+                                    style: TextStyle(
+                                      fontSize: 20,
                                     ),
-                                    SizedBox(
-                                        height: 100,
-                                        width: 500,
-                                        child: Image.asset("icons/fnb.png")),
-                                    Text(compSummary),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                    const Text(
-                                        'Scope Emission Scale in 100k Metric Tons CO2'),
-                                    SizedBox(
-                                      height: 300,
+                                  ),
+                                  SizedBox(
+                                      height: 100,
                                       width: 500,
-                                      child: Center(
-                                        child: PrettyGauge(
-                                          gaugeSize: 300,
-                                          minValue: 0,
-                                          maxValue: 40,
-                                          segments: [
-                                            GaugeSegment(
-                                                'Normal', 6.67, Colors.green),
-                                            GaugeSegment('Concerning', 13.33,
-                                                Colors.yellowAccent),
-                                            GaugeSegment('Over emitting', 20,
-                                                Colors.red),
-                                          ],
-                                          valueWidget: Text(
-                                            scopeValue2021.toStringAsFixed(1),
-                                            style:
-                                                const TextStyle(fontSize: 40),
-                                          ),
-                                          currentValue:
-                                              scopeValue2021.toDouble(),
-                                          needleColor: Colors.blue,
+                                      child: Image.asset("icons/fnb.png")),
+                                  Text(compSummary),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text(
+                                      'Scope Emission Scale in 100k Metric Tons CO2'),
+                                  SizedBox(
+                                    height: 300,
+                                    width: 500,
+                                    child: Center(
+                                      child: PrettyGauge(
+                                        gaugeSize: 300,
+                                        minValue: 0,
+                                        maxValue: 40,
+                                        segments: [
+                                          GaugeSegment(
+                                              'Normal', 6.67, Colors.green),
+                                          GaugeSegment('Concerning', 13.33,
+                                              Colors.yellowAccent),
+                                          GaugeSegment(
+                                              'Over emitting', 20, Colors.red),
+                                        ],
+                                        valueWidget: Text(
+                                          scopeValue2021.toStringAsFixed(1),
+                                          style: const TextStyle(fontSize: 40),
                                         ),
+                                        currentValue: scopeValue2021.toDouble(),
+                                        needleColor: Colors.blue,
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            );
-                          });
-                    },
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    child: Row(
-                      children: const [
-                        ImageIcon(
-                          AssetImage("icons/fnb.png"),
-                          color: Colors.green,
-                        ),
-                        Text(
-                          'FNB',
-                          style: TextStyle(color: text_col),
-                        ),
-                      ],
-                    )),
+                            ),
+                          );
+                        });
+                  },
+                  icon: Image.asset('icons/fnb.png'),
+                  label: const Text(
+                    '',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -236,86 +232,77 @@ class _MyHomePageState extends State<MyHomePage> {
               //Nedbank
               SizedBox(
                 height: 50,
-                width: 100,
-                child: ElevatedButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            String compSummary = getCompInfo('Nedbank');
-                            return SingleChildScrollView(
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 60.0),
-                                child: Column(
-                                  children: [
-                                    const ImageIcon(
-                                      AssetImage("icons/nedbank.png"),
-                                      color: Colors.green,
+                width: 120,
+                child: TextButton.icon(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white)),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          String compSummary = getCompInfo('Nedbank');
+                          return SingleChildScrollView(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20.0, horizontal: 60.0),
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'Nedbank',
+                                    style: TextStyle(
+                                      fontSize: 20,
                                     ),
-                                    const Text(
-                                      'Nedbank',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                      ),
-                                    ),
-                                    SizedBox(
-                                        height: 100,
-                                        width: 500,
-                                        child:
-                                            Image.asset("icons/nedbank.jpg")),
-                                    Text(compSummary),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                    const Text(
-                                        'Scope Emission Scale in 100k Metric Tons CO2'),
-                                    SizedBox(
-                                      height: 300,
+                                  ),
+                                  SizedBox(
+                                      height: 100,
                                       width: 500,
-                                      child: Center(
-                                        child: PrettyGauge(
-                                          gaugeSize: 300,
-                                          minValue: 0,
-                                          maxValue: 40,
-                                          segments: [
-                                            GaugeSegment(
-                                                'Normal', 6.67, Colors.green),
-                                            GaugeSegment('Concerning', 13.33,
-                                                Colors.yellowAccent),
-                                            GaugeSegment('Over emitting', 20,
-                                                Colors.red),
-                                          ],
-                                          valueWidget: Text(
-                                            scopeValue2021.toStringAsFixed(1),
-                                            style:
-                                                const TextStyle(fontSize: 40),
-                                          ),
-                                          currentValue:
-                                              scopeValue2021.toDouble(),
-                                          needleColor: Colors.blue,
+                                      child: Image.asset("icons/nedbank.png")),
+                                  Text(compSummary),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text(
+                                      'Scope Emission Scale in 100k Metric Tons CO2'),
+                                  SizedBox(
+                                    height: 300,
+                                    width: 500,
+                                    child: Center(
+                                      child: PrettyGauge(
+                                        gaugeSize: 300,
+                                        minValue: 0,
+                                        maxValue: 40,
+                                        segments: [
+                                          GaugeSegment(
+                                              'Normal', 6.67, Colors.green),
+                                          GaugeSegment('Concerning', 13.33,
+                                              Colors.yellowAccent),
+                                          GaugeSegment(
+                                              'Over emitting', 20, Colors.red),
+                                        ],
+                                        valueWidget: Text(
+                                          scopeValue2021.toStringAsFixed(1),
+                                          style: const TextStyle(fontSize: 40),
                                         ),
+                                        currentValue: scopeValue2021.toDouble(),
+                                        needleColor: Colors.blue,
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            );
-                          });
-                    },
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    child: Row(
-                      children: const [
-                        ImageIcon(
-                          AssetImage("icons/nedbank.jpg"),
-                          color: Colors.green,
-                        ),
-                        Text(
-                          'Nedbank',
-                          style: TextStyle(color: text_col),
-                        ),
-                      ],
-                    )),
+                            ),
+                          );
+                        });
+                  },
+                  icon: Image.asset('icons/nedbank.png'),
+                  label: const Text(
+                    '',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -323,82 +310,77 @@ class _MyHomePageState extends State<MyHomePage> {
               //anglo american
               SizedBox(
                 height: 50,
-                width: 200,
-                child: ElevatedButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            String compSummary =
-                                getCompInfo('ANGLO AMERICAN (PTY) LTD');
-                            return SingleChildScrollView(
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 60.0),
-                                child: Column(
-                                  children: [
-                                    const Text(
-                                      'Anglo American',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                      ),
+                width: 170,
+                child: TextButton.icon(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white)),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          String compSummary = getCompInfo('Anglo American');
+                          return SingleChildScrollView(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20.0, horizontal: 60.0),
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'Anglo American',
+                                    style: TextStyle(
+                                      fontSize: 20,
                                     ),
-                                    SizedBox(
-                                        height: 100,
-                                        width: 500,
-                                        child: Image.asset("icons/anglo.jpg")),
-                                    Text(compSummary),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                    const Text(
-                                        'Scope Emission Scale in 100k Metric Tons CO2'),
-                                    SizedBox(
-                                      height: 300,
+                                  ),
+                                  SizedBox(
+                                      height: 100,
                                       width: 500,
-                                      child: Center(
-                                        child: PrettyGauge(
-                                          gaugeSize: 300,
-                                          minValue: 0,
-                                          maxValue: 40,
-                                          segments: [
-                                            GaugeSegment(
-                                                'Normal', 6.67, Colors.green),
-                                            GaugeSegment('Concerning', 13.33,
-                                                Colors.yellowAccent),
-                                            GaugeSegment('Over emitting', 20,
-                                                Colors.red),
-                                          ],
-                                          valueWidget: Text(
-                                            scopeValue2021.toStringAsFixed(1),
-                                            style:
-                                                const TextStyle(fontSize: 40),
-                                          ),
-                                          currentValue:
-                                              scopeValue2021.toDouble(),
-                                          needleColor: Colors.blue,
+                                      child: Image.asset("icons/anglo.png")),
+                                  Text(compSummary),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text(
+                                      'Scope Emission Scale in 100k Metric Tons CO2'),
+                                  SizedBox(
+                                    height: 300,
+                                    width: 500,
+                                    child: Center(
+                                      child: PrettyGauge(
+                                        gaugeSize: 300,
+                                        minValue: 0,
+                                        maxValue: 40,
+                                        segments: [
+                                          GaugeSegment(
+                                              'Normal', 6.67, Colors.green),
+                                          GaugeSegment('Concerning', 13.33,
+                                              Colors.yellowAccent),
+                                          GaugeSegment(
+                                              'Over emitting', 20, Colors.red),
+                                        ],
+                                        valueWidget: Text(
+                                          scopeValue2021.toStringAsFixed(1),
+                                          style: const TextStyle(fontSize: 40),
                                         ),
+                                        currentValue: scopeValue2021.toDouble(),
+                                        needleColor: Colors.blue,
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            );
-                          });
-                    },
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    child: Row(
-                      children: const [
-                        ImageIcon(
-                          AssetImage("icons/anglo.jpg"),
-                          color: Colors.green,
-                        ),
-                        Text(
-                          'ANGLO AMERICAN (PTY) LTD',
-                          style: TextStyle(color: text_col),
-                        ),
-                      ],
-                    )),
+                            ),
+                          );
+                        });
+                  },
+                  icon: Image.asset('icons/anglo.png'),
+                  label: const Text(
+                    '',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -406,82 +388,77 @@ class _MyHomePageState extends State<MyHomePage> {
               //pernod ricard
               SizedBox(
                 height: 50,
-                width: 450,
-                child: ElevatedButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            String compSummary = getCompInfo(
-                                'PERNOD RICARD SOUTH AFRICA (PTY) LTD');
-                            return SingleChildScrollView(
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 60.0),
-                                child: Column(
-                                  children: [
-                                    const Text(
-                                      'Pernod Ricard SA',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                      ),
+                width: 170,
+                child: TextButton.icon(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white)),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          String compSummary = getCompInfo('Pernod Ricard SA');
+                          return SingleChildScrollView(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20.0, horizontal: 60.0),
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'Pernod Ricard SA',
+                                    style: TextStyle(
+                                      fontSize: 20,
                                     ),
-                                    SizedBox(
-                                        height: 370,
-                                        width: 150,
-                                        child: Image.asset("icons/pernod.png")),
-                                    Text(compSummary),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                    const Text(
-                                        'Scope Emission Scale in 100k Metric Tons CO2'),
-                                    SizedBox(
-                                      height: 300,
+                                  ),
+                                  SizedBox(
+                                      height: 100,
                                       width: 500,
-                                      child: Center(
-                                        child: PrettyGauge(
-                                          gaugeSize: 300,
-                                          minValue: 0,
-                                          maxValue: 40,
-                                          segments: [
-                                            GaugeSegment(
-                                                'Normal', 6.67, Colors.green),
-                                            GaugeSegment('Concerning', 13.33,
-                                                Colors.yellowAccent),
-                                            GaugeSegment('Over emitting', 20,
-                                                Colors.red),
-                                          ],
-                                          valueWidget: Text(
-                                            scopeValue2021.toStringAsFixed(1),
-                                            style:
-                                                const TextStyle(fontSize: 40),
-                                          ),
-                                          currentValue:
-                                              scopeValue2021.toDouble(),
-                                          needleColor: Colors.blue,
+                                      child: Image.asset("icons/pernod.png")),
+                                  Text(compSummary),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text(
+                                      'Scope Emission Scale in 100k Metric Tons CO2'),
+                                  SizedBox(
+                                    height: 300,
+                                    width: 500,
+                                    child: Center(
+                                      child: PrettyGauge(
+                                        gaugeSize: 300,
+                                        minValue: 0,
+                                        maxValue: 40,
+                                        segments: [
+                                          GaugeSegment(
+                                              'Normal', 6.67, Colors.green),
+                                          GaugeSegment('Concerning', 13.33,
+                                              Colors.yellowAccent),
+                                          GaugeSegment(
+                                              'Over emitting', 20, Colors.red),
+                                        ],
+                                        valueWidget: Text(
+                                          scopeValue2021.toStringAsFixed(1),
+                                          style: const TextStyle(fontSize: 40),
                                         ),
+                                        currentValue: scopeValue2021.toDouble(),
+                                        needleColor: Colors.blue,
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            );
-                          });
-                    },
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    child: Row(
-                      children: const [
-                        ImageIcon(
-                          AssetImage("icons/pernod.png"),
-                          color: Colors.green,
-                        ),
-                        Text(
-                          'PERNOD RICARD SOUTH AFRICA (PTY) LTD',
-                          style: TextStyle(color: text_col),
-                        ),
-                      ],
-                    )),
+                            ),
+                          );
+                        });
+                  },
+                  icon: Image.asset('icons/pernod.png'),
+                  label: const Text(
+                    '',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -489,82 +466,77 @@ class _MyHomePageState extends State<MyHomePage> {
               //nestle
               SizedBox(
                 height: 50,
-                width: 400,
-                child: ElevatedButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            String compSummary =
-                                getCompInfo('NESTLE (SOUTH AFRICA) (PTY) LTD');
-                            return SingleChildScrollView(
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 60.0),
-                                child: Column(
-                                  children: [
-                                    const Text(
-                                      'Nestle SA',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                      ),
+                width: 130,
+                child: TextButton.icon(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white)),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          String compSummary = getCompInfo('Nestle SA');
+                          return SingleChildScrollView(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20.0, horizontal: 60.0),
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'Nestle SA',
+                                    style: TextStyle(
+                                      fontSize: 20,
                                     ),
-                                    SizedBox(
-                                        height: 100,
-                                        width: 500,
-                                        child: Image.asset("icons/nestle.png")),
-                                    Text(compSummary),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                    const Text(
-                                        'Scope Emission Scale in 100k Metric Tons CO2'),
-                                    SizedBox(
-                                      height: 300,
+                                  ),
+                                  SizedBox(
+                                      height: 100,
                                       width: 500,
-                                      child: Center(
-                                        child: PrettyGauge(
-                                          gaugeSize: 300,
-                                          minValue: 0,
-                                          maxValue: 40,
-                                          segments: [
-                                            GaugeSegment(
-                                                'Normal', 6.67, Colors.green),
-                                            GaugeSegment('Concerning', 13.33,
-                                                Colors.yellowAccent),
-                                            GaugeSegment('Over emitting', 20,
-                                                Colors.red),
-                                          ],
-                                          valueWidget: Text(
-                                            scopeValue2021.toStringAsFixed(1),
-                                            style:
-                                                const TextStyle(fontSize: 40),
-                                          ),
-                                          currentValue:
-                                              scopeValue2021.toDouble(),
-                                          needleColor: Colors.blue,
+                                      child: Image.asset("icons/nestle.png")),
+                                  Text(compSummary),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text(
+                                      'Scope Emission Scale in 100k Metric Tons CO2'),
+                                  SizedBox(
+                                    height: 300,
+                                    width: 500,
+                                    child: Center(
+                                      child: PrettyGauge(
+                                        gaugeSize: 300,
+                                        minValue: 0,
+                                        maxValue: 40,
+                                        segments: [
+                                          GaugeSegment(
+                                              'Normal', 6.67, Colors.green),
+                                          GaugeSegment('Concerning', 13.33,
+                                              Colors.yellowAccent),
+                                          GaugeSegment(
+                                              'Over emitting', 20, Colors.red),
+                                        ],
+                                        valueWidget: Text(
+                                          scopeValue2021.toStringAsFixed(1),
+                                          style: const TextStyle(fontSize: 40),
                                         ),
+                                        currentValue: scopeValue2021.toDouble(),
+                                        needleColor: Colors.blue,
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            );
-                          });
-                    },
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    child: Row(
-                      children: const [
-                        ImageIcon(
-                          AssetImage("icons/nestle.png"),
-                          color: Colors.green,
-                        ),
-                        Text(
-                          'NESTLE (SOUTH AFRICA) (PTY) LTD',
-                          style: TextStyle(color: text_col),
-                        ),
-                      ],
-                    )),
+                            ),
+                          );
+                        });
+                  },
+                  icon: Image.asset('icons/nestle.png'),
+                  label: const Text(
+                    '',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -572,81 +544,77 @@ class _MyHomePageState extends State<MyHomePage> {
               //exxaro
               SizedBox(
                 height: 50,
-                width: 100,
-                child: ElevatedButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            String compSummary = getCompInfo('Exarro SA');
-                            return SingleChildScrollView(
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 60.0),
-                                child: Column(
-                                  children: [
-                                    const Text(
-                                      'Exxaro SA',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                      ),
+                width: 130,
+                child: TextButton.icon(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white)),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          String compSummary = getCompInfo('Exxaro SA');
+                          return SingleChildScrollView(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20.0, horizontal: 60.0),
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'Exxaro SA',
+                                    style: TextStyle(
+                                      fontSize: 20,
                                     ),
-                                    SizedBox(
-                                        height: 100,
-                                        width: 500,
-                                        child: Image.asset("icons/exxaro.png")),
-                                    Text(compSummary),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                    const Text(
-                                        'Scope Emission Scale in 100k Metric Tons CO2'),
-                                    SizedBox(
-                                      height: 300,
+                                  ),
+                                  SizedBox(
+                                      height: 100,
                                       width: 500,
-                                      child: Center(
-                                        child: PrettyGauge(
-                                          gaugeSize: 300,
-                                          minValue: 0,
-                                          maxValue: 40,
-                                          segments: [
-                                            GaugeSegment(
-                                                'Normal', 6.67, Colors.green),
-                                            GaugeSegment('Concerning', 13.33,
-                                                Colors.yellowAccent),
-                                            GaugeSegment('Over emitting', 20,
-                                                Colors.red),
-                                          ],
-                                          valueWidget: Text(
-                                            scopeValue2021.toStringAsFixed(1),
-                                            style:
-                                                const TextStyle(fontSize: 40),
-                                          ),
-                                          currentValue:
-                                              scopeValue2021.toDouble(),
-                                          needleColor: Colors.blue,
+                                      child: Image.asset("icons/exxaro.png")),
+                                  Text(compSummary),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text(
+                                      'Scope Emission Scale in 100k Metric Tons CO2'),
+                                  SizedBox(
+                                    height: 300,
+                                    width: 500,
+                                    child: Center(
+                                      child: PrettyGauge(
+                                        gaugeSize: 300,
+                                        minValue: 0,
+                                        maxValue: 40,
+                                        segments: [
+                                          GaugeSegment(
+                                              'Normal', 6.67, Colors.green),
+                                          GaugeSegment('Concerning', 13.33,
+                                              Colors.yellowAccent),
+                                          GaugeSegment(
+                                              'Over emitting', 20, Colors.red),
+                                        ],
+                                        valueWidget: Text(
+                                          scopeValue2021.toStringAsFixed(1),
+                                          style: const TextStyle(fontSize: 40),
                                         ),
+                                        currentValue: scopeValue2021.toDouble(),
+                                        needleColor: Colors.blue,
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            );
-                          });
-                    },
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    child: Row(
-                      children: const [
-                        ImageIcon(
-                          AssetImage("icons/exxaro.png"),
-                          color: Colors.green,
-                        ),
-                        Text(
-                          'Exarro SA',
-                          style: TextStyle(color: text_col),
-                        ),
-                      ],
-                    )),
+                            ),
+                          );
+                        });
+                  },
+                  icon: Image.asset('icons/exxaro.png'),
+                  label: const Text(
+                    '',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -654,82 +622,77 @@ class _MyHomePageState extends State<MyHomePage> {
               //isuzu
               SizedBox(
                 height: 50,
-                width: 400,
-                child: ElevatedButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            String compSummary = getCompInfo(
-                                'ISUZU MOTORS(SOUTH AFRICA)(PTY)(LTD)');
-                            return SingleChildScrollView(
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 60.0),
-                                child: Column(
-                                  children: [
-                                    const Text(
-                                      'Isuzu Motors SA',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                      ),
+                width: 170,
+                child: TextButton.icon(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white)),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          String compSummary = getCompInfo('Isuzu Motors SA');
+                          return SingleChildScrollView(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20.0, horizontal: 60.0),
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'Nedbank',
+                                    style: TextStyle(
+                                      fontSize: 20,
                                     ),
-                                    SizedBox(
-                                        height: 100,
-                                        width: 500,
-                                        child: Image.asset("icons/isuzu.jpeg")),
-                                    Text(compSummary),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                    const Text(
-                                        'Scope Emission Scale in 100k Metric Tons CO2'),
-                                    SizedBox(
-                                      height: 300,
+                                  ),
+                                  SizedBox(
+                                      height: 100,
                                       width: 500,
-                                      child: Center(
-                                        child: PrettyGauge(
-                                          gaugeSize: 300,
-                                          minValue: 0,
-                                          maxValue: 40,
-                                          segments: [
-                                            GaugeSegment(
-                                                'Normal', 6.67, Colors.green),
-                                            GaugeSegment('Concerning', 13.33,
-                                                Colors.yellowAccent),
-                                            GaugeSegment('Over emitting', 20,
-                                                Colors.red),
-                                          ],
-                                          valueWidget: Text(
-                                            scopeValue2021.toStringAsFixed(1),
-                                            style:
-                                                const TextStyle(fontSize: 40),
-                                          ),
-                                          currentValue:
-                                              scopeValue2021.toDouble(),
-                                          needleColor: Colors.blue,
+                                      child: Image.asset("icons/isuzu.png")),
+                                  Text(compSummary),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text(
+                                      'Scope Emission Scale in 100k Metric Tons CO2'),
+                                  SizedBox(
+                                    height: 300,
+                                    width: 500,
+                                    child: Center(
+                                      child: PrettyGauge(
+                                        gaugeSize: 300,
+                                        minValue: 0,
+                                        maxValue: 40,
+                                        segments: [
+                                          GaugeSegment(
+                                              'Normal', 6.67, Colors.green),
+                                          GaugeSegment('Concerning', 13.33,
+                                              Colors.yellowAccent),
+                                          GaugeSegment(
+                                              'Over emitting', 20, Colors.red),
+                                        ],
+                                        valueWidget: Text(
+                                          scopeValue2021.toStringAsFixed(1),
+                                          style: const TextStyle(fontSize: 40),
                                         ),
+                                        currentValue: scopeValue2021.toDouble(),
+                                        needleColor: Colors.blue,
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            );
-                          });
-                    },
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    child: Row(
-                      children: const [
-                        ImageIcon(
-                          AssetImage("icons/isuzu.jpeg"),
-                          color: Colors.green,
-                        ),
-                        Text(
-                          'ISUZU MOTORS(SOUTH AFRICA)(PTY)(LTD)',
-                          style: TextStyle(color: text_col),
-                        ),
-                      ],
-                    )),
+                            ),
+                          );
+                        });
+                  },
+                  icon: Image.asset('icons/isuzu.png'),
+                  label: const Text(
+                    '',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -737,83 +700,78 @@ class _MyHomePageState extends State<MyHomePage> {
               //country bird
               SizedBox(
                 height: 50,
-                width: 400,
-                child: ElevatedButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            String compSummary =
-                                getCompInfo('COUNTRY BIRD HOLDINGS (PTY) LTD');
-                            return SingleChildScrollView(
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 60.0),
-                                child: Column(
-                                  children: [
-                                    const Text(
-                                      'Country Bird Holdings',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                      ),
+                width: 250,
+                child: TextButton.icon(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white)),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          String compSummary =
+                              getCompInfo('Country Bird Holdings');
+                          return SingleChildScrollView(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20.0, horizontal: 60.0),
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'Country Bird Holdings',
+                                    style: TextStyle(
+                                      fontSize: 20,
                                     ),
-                                    SizedBox(
-                                        height: 100,
-                                        width: 500,
-                                        child: Image.asset(
-                                            "icons/countrybird.png")),
-                                    Text(compSummary),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                    const Text(
-                                        'Scope Emission Scale in 100k Metric Tons CO2'),
-                                    SizedBox(
-                                      height: 300,
+                                  ),
+                                  SizedBox(
+                                      height: 100,
                                       width: 500,
-                                      child: Center(
-                                        child: PrettyGauge(
-                                          gaugeSize: 300,
-                                          minValue: 0,
-                                          maxValue: 40,
-                                          segments: [
-                                            GaugeSegment(
-                                                'Normal', 6.67, Colors.green),
-                                            GaugeSegment('Concerning', 13.33,
-                                                Colors.yellowAccent),
-                                            GaugeSegment('Over emitting', 20,
-                                                Colors.red),
-                                          ],
-                                          valueWidget: Text(
-                                            scopeValue2021.toStringAsFixed(1),
-                                            style:
-                                                const TextStyle(fontSize: 40),
-                                          ),
-                                          currentValue:
-                                              scopeValue2021.toDouble(),
-                                          needleColor: Colors.blue,
+                                      child: Image.asset("icons/country.png")),
+                                  Text(compSummary),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text(
+                                      'Scope Emission Scale in 100k Metric Tons CO2'),
+                                  SizedBox(
+                                    height: 300,
+                                    width: 500,
+                                    child: Center(
+                                      child: PrettyGauge(
+                                        gaugeSize: 300,
+                                        minValue: 0,
+                                        maxValue: 40,
+                                        segments: [
+                                          GaugeSegment(
+                                              'Normal', 6.67, Colors.green),
+                                          GaugeSegment('Concerning', 13.33,
+                                              Colors.yellowAccent),
+                                          GaugeSegment(
+                                              'Over emitting', 20, Colors.red),
+                                        ],
+                                        valueWidget: Text(
+                                          scopeValue2021.toStringAsFixed(1),
+                                          style: const TextStyle(fontSize: 40),
                                         ),
+                                        currentValue: scopeValue2021.toDouble(),
+                                        needleColor: Colors.blue,
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            );
-                          });
-                    },
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    child: Row(
-                      children: const [
-                        ImageIcon(
-                          AssetImage("icons/countrybird.png"),
-                          color: Colors.green,
-                        ),
-                        Text(
-                          'COUNTRY BIRD HOLDINGS (PTY) LTD',
-                          style: TextStyle(color: text_col),
-                        ),
-                      ],
-                    )),
+                            ),
+                          );
+                        });
+                  },
+                  icon: Image.asset('icons/country.png'),
+                  label: const Text(
+                    '',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -821,83 +779,79 @@ class _MyHomePageState extends State<MyHomePage> {
               // karan beef
               SizedBox(
                 height: 50,
-                width: 400,
-                child: ElevatedButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            String compSummary =
-                                getCompInfo('KARAN BEEF FEEDLOT');
-                            return SingleChildScrollView(
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 60.0),
-                                child: Column(
-                                  children: [
-                                    const Text(
-                                      'Karan Beef Feedlot',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                      ),
+                width: 200,
+                child: TextButton.icon(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white)),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          String compSummary =
+                              getCompInfo('Karan Beef Feedlot');
+                          return SingleChildScrollView(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20.0, horizontal: 60.0),
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'Karan Beef Feedlot',
+                                    style: TextStyle(
+                                      fontSize: 20,
                                     ),
-                                    SizedBox(
-                                        height: 100,
-                                        width: 500,
-                                        child: Image.asset(
-                                            "icons/karan_beef.png")),
-                                    Text(compSummary),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                    const Text(
-                                        'Scope Emission Scale in 100k Metric Tons CO2'),
-                                    SizedBox(
-                                      height: 300,
+                                  ),
+                                  SizedBox(
+                                      height: 100,
                                       width: 500,
-                                      child: Center(
-                                        child: PrettyGauge(
-                                          gaugeSize: 300,
-                                          minValue: 0,
-                                          maxValue: 40,
-                                          segments: [
-                                            GaugeSegment(
-                                                'Normal', 6.67, Colors.green),
-                                            GaugeSegment('Concerning', 13.33,
-                                                Colors.yellowAccent),
-                                            GaugeSegment('Over emitting', 20,
-                                                Colors.red),
-                                          ],
-                                          valueWidget: Text(
-                                            scopeValue2021.toStringAsFixed(1),
-                                            style:
-                                                const TextStyle(fontSize: 40),
-                                          ),
-                                          currentValue:
-                                              scopeValue2021.toDouble(),
-                                          needleColor: Colors.blue,
+                                      child:
+                                          Image.asset("icons/karan_beef.png")),
+                                  Text(compSummary),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text(
+                                      'Scope Emission Scale in 100k Metric Tons CO2'),
+                                  SizedBox(
+                                    height: 300,
+                                    width: 500,
+                                    child: Center(
+                                      child: PrettyGauge(
+                                        gaugeSize: 300,
+                                        minValue: 0,
+                                        maxValue: 40,
+                                        segments: [
+                                          GaugeSegment(
+                                              'Normal', 6.67, Colors.green),
+                                          GaugeSegment('Concerning', 13.33,
+                                              Colors.yellowAccent),
+                                          GaugeSegment(
+                                              'Over emitting', 20, Colors.red),
+                                        ],
+                                        valueWidget: Text(
+                                          scopeValue2021.toStringAsFixed(1),
+                                          style: const TextStyle(fontSize: 40),
                                         ),
+                                        currentValue: scopeValue2021.toDouble(),
+                                        needleColor: Colors.blue,
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            );
-                          });
-                    },
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    child: Row(
-                      children: const [
-                        ImageIcon(
-                          AssetImage("icons/karan_beef.png"),
-                          color: Colors.green,
-                        ),
-                        Text(
-                          'KARAN BEEF FEEDLOT',
-                          style: TextStyle(color: text_col),
-                        ),
-                      ],
-                    )),
+                            ),
+                          );
+                        });
+                  },
+                  icon: Image.asset('icons/karan_beef.png'),
+                  label: const Text(
+                    '',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -905,165 +859,156 @@ class _MyHomePageState extends State<MyHomePage> {
               //afgri grain
               SizedBox(
                 height: 50,
-                width: 400,
-                child: ElevatedButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            String compSummary =
-                                getCompInfo('AFGRI GRAIN MARKETING (PTY) LTD');
-                            return SingleChildScrollView(
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 60.0),
-                                child: Column(
-                                  children: [
-                                    const Text(
-                                      'Afgri Grain Marketing',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                      ),
+                width: 200,
+                child: TextButton.icon(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white)),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          String compSummary =
+                              getCompInfo('Afgri Grain Marketing');
+                          return SingleChildScrollView(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20.0, horizontal: 60.0),
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'Afgri Grain Marketing',
+                                    style: TextStyle(
+                                      fontSize: 20,
                                     ),
-                                    SizedBox(
-                                        height: 100,
-                                        width: 500,
-                                        child: Image.asset("icons/afgri.jpg")),
-                                    Text(compSummary),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                    const Text(
-                                        'Scope Emission Scale in 100k Metric Tons CO2'),
-                                    SizedBox(
-                                      height: 300,
+                                  ),
+                                  SizedBox(
+                                      height: 100,
                                       width: 500,
-                                      child: Center(
-                                        child: PrettyGauge(
-                                          gaugeSize: 300,
-                                          minValue: 0,
-                                          maxValue: 40,
-                                          segments: [
-                                            GaugeSegment(
-                                                'Normal', 6.67, Colors.green),
-                                            GaugeSegment('Concerning', 13.33,
-                                                Colors.yellowAccent),
-                                            GaugeSegment('Over emitting', 20,
-                                                Colors.red),
-                                          ],
-                                          valueWidget: Text(
-                                            scopeValue2021.toStringAsFixed(1),
-                                            style:
-                                                const TextStyle(fontSize: 40),
-                                          ),
-                                          currentValue:
-                                              scopeValue2021.toDouble(),
-                                          needleColor: Colors.blue,
+                                      child: Image.asset("icons/afgri.png")),
+                                  Text(compSummary),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text(
+                                      'Scope Emission Scale in 100k Metric Tons CO2'),
+                                  SizedBox(
+                                    height: 300,
+                                    width: 500,
+                                    child: Center(
+                                      child: PrettyGauge(
+                                        gaugeSize: 300,
+                                        minValue: 0,
+                                        maxValue: 40,
+                                        segments: [
+                                          GaugeSegment(
+                                              'Normal', 6.67, Colors.green),
+                                          GaugeSegment('Concerning', 13.33,
+                                              Colors.yellowAccent),
+                                          GaugeSegment(
+                                              'Over emitting', 20, Colors.red),
+                                        ],
+                                        valueWidget: Text(
+                                          scopeValue2021.toStringAsFixed(1),
+                                          style: const TextStyle(fontSize: 40),
                                         ),
+                                        currentValue: scopeValue2021.toDouble(),
+                                        needleColor: Colors.blue,
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            );
-                          });
-                    },
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    child: Row(
-                      children: const [
-                        ImageIcon(
-                          AssetImage("icons/afgri.jpg"),
-                          color: Colors.green,
-                        ),
-                        Text(
-                          'AFGRI GRAIN MARKETING (PTY) LTD',
-                          style: TextStyle(color: text_col),
-                        ),
-                      ],
-                    )),
+                            ),
+                          );
+                        });
+                  },
+                  icon: Image.asset('icons/afgri.png'),
+                  label: const Text(
+                    '',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 20,
               ),
-              //implats
+              //Implats
               SizedBox(
                 height: 50,
-                width: 100,
-                child: ElevatedButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            String compSummary = getCompInfo('IMPLATS');
-                            return SingleChildScrollView(
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 60.0),
-                                child: Column(
-                                  children: [
-                                    const Text(
-                                      'Implats',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                      ),
+                width: 110,
+                child: TextButton.icon(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white)),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          String compSummary = getCompInfo('Implats');
+                          return SingleChildScrollView(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20.0, horizontal: 60.0),
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'Implats',
+                                    style: TextStyle(
+                                      fontSize: 20,
                                     ),
-                                    SizedBox(
-                                        height: 100,
-                                        width: 500,
-                                        child:
-                                            Image.asset("icons/implats.png")),
-                                    Text(compSummary),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                    const Text(
-                                        'Scope Emission Scale in 100k Metric Tons CO2'),
-                                    SizedBox(
-                                      height: 300,
+                                  ),
+                                  SizedBox(
+                                      height: 100,
                                       width: 500,
-                                      child: Center(
-                                        child: PrettyGauge(
-                                          gaugeSize: 300,
-                                          minValue: 0,
-                                          maxValue: 40,
-                                          segments: [
-                                            GaugeSegment(
-                                                'Normal', 6.67, Colors.green),
-                                            GaugeSegment('Concerning', 13.33,
-                                                Colors.yellowAccent),
-                                            GaugeSegment('Over emitting', 20,
-                                                Colors.red),
-                                          ],
-                                          valueWidget: Text(
-                                            scopeValue2021.toStringAsFixed(1),
-                                            style:
-                                                const TextStyle(fontSize: 40),
-                                          ),
-                                          currentValue:
-                                              scopeValue2021.toDouble(),
-                                          needleColor: Colors.blue,
+                                      child: Image.asset("icons/implats.png")),
+                                  Text(compSummary),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text(
+                                      'Scope Emission Scale in 100k Metric Tons CO2'),
+                                  SizedBox(
+                                    height: 300,
+                                    width: 500,
+                                    child: Center(
+                                      child: PrettyGauge(
+                                        gaugeSize: 300,
+                                        minValue: 0,
+                                        maxValue: 40,
+                                        segments: [
+                                          GaugeSegment(
+                                              'Normal', 6.67, Colors.green),
+                                          GaugeSegment('Concerning', 13.33,
+                                              Colors.yellowAccent),
+                                          GaugeSegment(
+                                              'Over emitting', 20, Colors.red),
+                                        ],
+                                        valueWidget: Text(
+                                          scopeValue2021.toStringAsFixed(1),
+                                          style: const TextStyle(fontSize: 40),
                                         ),
+                                        currentValue: scopeValue2021.toDouble(),
+                                        needleColor: Colors.blue,
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            );
-                          });
-                    },
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    child: Row(
-                      children: const [
-                        ImageIcon(
-                          AssetImage("icons/implats.png"),
-                          color: Colors.white,
-                        ),
-                        Text(
-                          'IMPLATS',
-                          style: TextStyle(color: text_col),
-                        ),
-                      ],
-                    )),
+                            ),
+                          );
+                        });
+                  },
+                  icon: Image.asset('icons/implats.png'),
+                  label: const Text(
+                    '',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -1071,82 +1016,77 @@ class _MyHomePageState extends State<MyHomePage> {
               //telkom
               SizedBox(
                 height: 50,
-                width: 100,
-                child: ElevatedButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            String compSummary =
-                                getCompInfo('TELKOM SA SOC LTD');
-                            return SingleChildScrollView(
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 60.0),
-                                child: Column(
-                                  children: [
-                                    const Text(
-                                      'Telkom SA',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                      ),
+                width: 140,
+                child: TextButton.icon(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white)),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          String compSummary = getCompInfo('Telkom SA');
+                          return SingleChildScrollView(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20.0, horizontal: 60.0),
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'Telkom SA',
+                                    style: TextStyle(
+                                      fontSize: 20,
                                     ),
-                                    SizedBox(
-                                        height: 100,
-                                        width: 500,
-                                        child: Image.asset("icons/telkom.jpg")),
-                                    Text(compSummary),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                    const Text(
-                                        'Scope Emission Scale in 100k Metric Tons CO2'),
-                                    SizedBox(
-                                      height: 300,
+                                  ),
+                                  SizedBox(
+                                      height: 100,
                                       width: 500,
-                                      child: Center(
-                                        child: PrettyGauge(
-                                          gaugeSize: 300,
-                                          minValue: 0,
-                                          maxValue: 40,
-                                          segments: [
-                                            GaugeSegment(
-                                                'Normal', 6.67, Colors.green),
-                                            GaugeSegment('Concerning', 13.33,
-                                                Colors.yellowAccent),
-                                            GaugeSegment('Over emitting', 20,
-                                                Colors.red),
-                                          ],
-                                          valueWidget: Text(
-                                            scopeValue2021.toStringAsFixed(1),
-                                            style:
-                                                const TextStyle(fontSize: 40),
-                                          ),
-                                          currentValue:
-                                              scopeValue2021.toDouble(),
-                                          needleColor: Colors.blue,
+                                      child: Image.asset("icons/telkom.png")),
+                                  Text(compSummary),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text(
+                                      'Scope Emission Scale in 100k Metric Tons CO2'),
+                                  SizedBox(
+                                    height: 300,
+                                    width: 500,
+                                    child: Center(
+                                      child: PrettyGauge(
+                                        gaugeSize: 300,
+                                        minValue: 0,
+                                        maxValue: 40,
+                                        segments: [
+                                          GaugeSegment(
+                                              'Normal', 6.67, Colors.green),
+                                          GaugeSegment('Concerning', 13.33,
+                                              Colors.yellowAccent),
+                                          GaugeSegment(
+                                              'Over emitting', 20, Colors.red),
+                                        ],
+                                        valueWidget: Text(
+                                          scopeValue2021.toStringAsFixed(1),
+                                          style: const TextStyle(fontSize: 40),
                                         ),
+                                        currentValue: scopeValue2021.toDouble(),
+                                        needleColor: Colors.blue,
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            );
-                          });
-                    },
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    child: Row(
-                      children: const [
-                        ImageIcon(
-                          AssetImage("icons/telkom.jpg"),
-                          color: Colors.green,
-                        ),
-                        Text(
-                          'TELKOM SA SOC LTD',
-                          style: TextStyle(color: text_col),
-                        ),
-                      ],
-                    )),
+                            ),
+                          );
+                        });
+                  },
+                  icon: Image.asset('icons/telkom.png'),
+                  label: const Text(
+                    '',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -1154,83 +1094,77 @@ class _MyHomePageState extends State<MyHomePage> {
 //vodacom
               SizedBox(
                 height: 50,
-                width: 200,
-                child: ElevatedButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            String compSummary =
-                                getCompInfo('VODACOM(PTY) LTD');
-                            return SingleChildScrollView(
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 60.0),
-                                child: Column(
-                                  children: [
-                                    const Text(
-                                      'Vodacom',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                      ),
+                width: 140,
+                child: TextButton.icon(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white)),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          String compSummary = getCompInfo('Vodacom');
+                          return SingleChildScrollView(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20.0, horizontal: 60.0),
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'Vodacom',
+                                    style: TextStyle(
+                                      fontSize: 20,
                                     ),
-                                    SizedBox(
-                                        height: 100,
-                                        width: 500,
-                                        child:
-                                            Image.asset("icons/vodacom.jpeg")),
-                                    Text(compSummary),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                    const Text(
-                                        'Scope Emission Scale in 100k Metric Tons CO2'),
-                                    SizedBox(
-                                      height: 300,
+                                  ),
+                                  SizedBox(
+                                      height: 100,
                                       width: 500,
-                                      child: Center(
-                                        child: PrettyGauge(
-                                          gaugeSize: 300,
-                                          minValue: 0,
-                                          maxValue: 40,
-                                          segments: [
-                                            GaugeSegment(
-                                                'Normal', 6.67, Colors.green),
-                                            GaugeSegment('Concerning', 13.33,
-                                                Colors.yellowAccent),
-                                            GaugeSegment('Over emitting', 20,
-                                                Colors.red),
-                                          ],
-                                          valueWidget: Text(
-                                            scopeValue2021.toStringAsFixed(1),
-                                            style:
-                                                const TextStyle(fontSize: 40),
-                                          ),
-                                          currentValue:
-                                              scopeValue2021.toDouble(),
-                                          needleColor: Colors.blue,
+                                      child: Image.asset("icons/vodacom.png")),
+                                  Text(compSummary),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text(
+                                      'Scope Emission Scale in 100k Metric Tons CO2'),
+                                  SizedBox(
+                                    height: 300,
+                                    width: 500,
+                                    child: Center(
+                                      child: PrettyGauge(
+                                        gaugeSize: 300,
+                                        minValue: 0,
+                                        maxValue: 40,
+                                        segments: [
+                                          GaugeSegment(
+                                              'Normal', 6.67, Colors.green),
+                                          GaugeSegment('Concerning', 13.33,
+                                              Colors.yellowAccent),
+                                          GaugeSegment(
+                                              'Over emitting', 20, Colors.red),
+                                        ],
+                                        valueWidget: Text(
+                                          scopeValue2021.toStringAsFixed(1),
+                                          style: const TextStyle(fontSize: 40),
                                         ),
+                                        currentValue: scopeValue2021.toDouble(),
+                                        needleColor: Colors.blue,
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            );
-                          });
-                    },
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    child: Row(
-                      children: const [
-                        ImageIcon(
-                          AssetImage("icons/vodacom.jpeg"),
-                          color: Colors.green,
-                        ),
-                        Text(
-                          'VODACOM(PTY) LTD',
-                          style: TextStyle(color: text_col),
-                        ),
-                      ],
-                    )),
+                            ),
+                          );
+                        });
+                  },
+                  icon: Image.asset('icons/vodacom.png'),
+                  label: const Text(
+                    '',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -1238,83 +1172,79 @@ class _MyHomePageState extends State<MyHomePage> {
               //woolies
               SizedBox(
                 height: 50,
-                width: 300,
-                child: ElevatedButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            String compSummary =
-                                getCompInfo('WOOLWORTHS HOLDINGS LIMITED');
-                            return SingleChildScrollView(
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 60.0),
-                                child: Column(
-                                  children: [
-                                    const Text(
-                                      'Woolworths',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                      ),
+                width: 200,
+                child: TextButton.icon(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white)),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          String compSummary =
+                              getCompInfo('Woolworths Holdings');
+                          return SingleChildScrollView(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20.0, horizontal: 60.0),
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'Woolworths Holdings Limited',
+                                    style: TextStyle(
+                                      fontSize: 20,
                                     ),
-                                    SizedBox(
-                                        height: 100,
-                                        width: 500,
-                                        child: Image.asset(
-                                            'icons/woolworths.jpeg')),
-                                    Text(compSummary),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                    const Text(
-                                        'Scope Emission Scale in 100k Metric Tons CO2'),
-                                    SizedBox(
-                                      height: 300,
+                                  ),
+                                  SizedBox(
+                                      height: 100,
                                       width: 500,
-                                      child: Center(
-                                        child: PrettyGauge(
-                                          gaugeSize: 300,
-                                          minValue: 0,
-                                          maxValue: 40,
-                                          segments: [
-                                            GaugeSegment(
-                                                'Normal', 6.67, Colors.green),
-                                            GaugeSegment('Concerning', 13.33,
-                                                Colors.yellowAccent),
-                                            GaugeSegment('Over emitting', 20,
-                                                Colors.red),
-                                          ],
-                                          valueWidget: Text(
-                                            scopeValue2021.toStringAsFixed(1),
-                                            style:
-                                                const TextStyle(fontSize: 40),
-                                          ),
-                                          currentValue:
-                                              scopeValue2021.toDouble(),
-                                          needleColor: Colors.blue,
+                                      child:
+                                          Image.asset("icons/woolworths.png")),
+                                  Text(compSummary),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text(
+                                      'Scope Emission Scale in 100k Metric Tons CO2'),
+                                  SizedBox(
+                                    height: 300,
+                                    width: 500,
+                                    child: Center(
+                                      child: PrettyGauge(
+                                        gaugeSize: 300,
+                                        minValue: 0,
+                                        maxValue: 40,
+                                        segments: [
+                                          GaugeSegment(
+                                              'Normal', 6.67, Colors.green),
+                                          GaugeSegment('Concerning', 13.33,
+                                              Colors.yellowAccent),
+                                          GaugeSegment(
+                                              'Over emitting', 20, Colors.red),
+                                        ],
+                                        valueWidget: Text(
+                                          scopeValue2021.toStringAsFixed(1),
+                                          style: const TextStyle(fontSize: 40),
                                         ),
+                                        currentValue: scopeValue2021.toDouble(),
+                                        needleColor: Colors.blue,
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            );
-                          });
-                    },
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    child: Row(
-                      children: const [
-                        ImageIcon(
-                          AssetImage('icons/woolworths.jpeg'),
-                          color: Colors.green,
-                        ),
-                        Text(
-                          'WOOLWORTHS HOLDINGS LIMITED',
-                          style: TextStyle(color: text_col),
-                        ),
-                      ],
-                    )),
+                            ),
+                          );
+                        });
+                  },
+                  icon: Image.asset('icons/woolworths.png'),
+                  label: const Text(
+                    'Woolworths',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -1322,83 +1252,78 @@ class _MyHomePageState extends State<MyHomePage> {
               //mr price
               SizedBox(
                 height: 50,
-                width: 300,
-                child: ElevatedButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            String compSummary =
-                                getCompInfo('MR PRICE GROUP LTD');
-                            return SingleChildScrollView(
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 60.0),
-                                child: Column(
-                                  children: [
-                                    const Text(
-                                      'Mr Price Group',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                      ),
+                width: 110,
+                child: TextButton.icon(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white)),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          String compSummary = getCompInfo('Mr Price');
+                          return SingleChildScrollView(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20.0, horizontal: 60.0),
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'Mr Price Group',
+                                    style: TextStyle(
+                                      fontSize: 20,
                                     ),
-                                    SizedBox(
-                                        height: 100,
-                                        width: 500,
-                                        child:
-                                            Image.asset("icons/mrprice.jpeg")),
-                                    Text(compSummary),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                    const Text(
-                                        'Scope Emission Scale in 100k Metric Tons CO2'),
-                                    SizedBox(
-                                      height: 300,
+                                  ),
+                                  SizedBox(
+                                      height: 100,
                                       width: 500,
-                                      child: Center(
-                                        child: PrettyGauge(
-                                          gaugeSize: 300,
-                                          minValue: 0,
-                                          maxValue: 40,
-                                          segments: [
-                                            GaugeSegment(
-                                                'Normal', 6.67, Colors.green),
-                                            GaugeSegment('Concerning', 13.33,
-                                                Colors.yellowAccent),
-                                            GaugeSegment('Over emitting', 20,
-                                                Colors.red),
-                                          ],
-                                          valueWidget: Text(
-                                            scopeValue2021.toStringAsFixed(1),
-                                            style:
-                                                const TextStyle(fontSize: 40),
-                                          ),
-                                          currentValue:
-                                              scopeValue2021.toDouble(),
-                                          needleColor: Colors.blue,
+                                      child: Image.asset("icons/mrprice.png")),
+                                  Text(compSummary),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text(
+                                      'Scope Emission Scale in 100k Metric Tons CO2'),
+                                  SizedBox(
+                                    height: 300,
+                                    width: 500,
+                                    child: Center(
+                                      child: PrettyGauge(
+                                        gaugeSize: 300,
+                                        minValue: 0,
+                                        maxValue: 40,
+                                        segments: [
+                                          GaugeSegment(
+                                              'Normal', 6.67, Colors.green),
+                                          GaugeSegment('Concerning', 13.33,
+                                              Colors.yellowAccent),
+                                          GaugeSegment(
+                                              'Over emitting', 20, Colors.red),
+                                        ],
+                                        valueWidget: Text(
+                                          scopeValue2021.toStringAsFixed(1),
+                                          style: const TextStyle(fontSize: 40),
                                         ),
+                                        currentValue: scopeValue2021.toDouble(),
+                                        needleColor: Colors.blue,
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            );
-                          });
-                    },
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    child: Row(
-                      children: const [
-                        ImageIcon(
-                          AssetImage("icons/mrprice.jpeg"),
-                          color: Colors.green,
-                        ),
-                        Text(
-                          'MR PRICE GROUP LTD',
-                          style: TextStyle(color: text_col),
-                        ),
-                      ],
-                    )),
+                            ),
+                          );
+                        });
+                  },
+                  icon: Image.asset('icons/mrprice.png'),
+                  label: const Text(
+                    'Mr Price',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -1406,83 +1331,78 @@ class _MyHomePageState extends State<MyHomePage> {
               //shoprite
               SizedBox(
                 height: 50,
-                width: 100,
-                child: ElevatedButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            String compSummary =
-                                getCompInfo('SHOPRITE HOLDINGS');
-                            return SingleChildScrollView(
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 60.0),
-                                child: Column(
-                                  children: [
-                                    const Text(
-                                      'Shoprite',
-                                      style: TextStyle(
-                                        fontSize: 40,
-                                      ),
+                width: 130,
+                child: TextButton.icon(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white)),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          String compSummary = getCompInfo('Shoprite');
+                          return SingleChildScrollView(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20.0, horizontal: 60.0),
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'Shoprite',
+                                    style: TextStyle(
+                                      fontSize: 20,
                                     ),
-                                    SizedBox(
-                                        height: 100,
-                                        width: 500,
-                                        child: Image.asset(
-                                            "icons/shoprite_checkers.jpeg")),
-                                    Text(compSummary),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                    const Text(
-                                        'Scope Emission Scale in 100k Metric Tons CO2'),
-                                    SizedBox(
-                                      height: 300,
+                                  ),
+                                  SizedBox(
+                                      height: 100,
                                       width: 500,
-                                      child: Center(
-                                        child: PrettyGauge(
-                                          gaugeSize: 300,
-                                          minValue: 0,
-                                          maxValue: 40,
-                                          segments: [
-                                            GaugeSegment(
-                                                'Normal', 6.67, Colors.green),
-                                            GaugeSegment('Concerning', 13.33,
-                                                Colors.yellowAccent),
-                                            GaugeSegment('Over emitting', 20,
-                                                Colors.red),
-                                          ],
-                                          valueWidget: Text(
-                                            scopeValue2021.toStringAsFixed(1),
-                                            style:
-                                                const TextStyle(fontSize: 40),
-                                          ),
-                                          currentValue:
-                                              scopeValue2021.toDouble(),
-                                          needleColor: Colors.blue,
+                                      child: Image.asset(
+                                          "icons/shoprite_checkers.png")),
+                                  Text(compSummary),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text(
+                                      'Scope Emission Scale in 100k Metric Tons CO2'),
+                                  SizedBox(
+                                    height: 300,
+                                    width: 500,
+                                    child: Center(
+                                      child: PrettyGauge(
+                                        gaugeSize: 300,
+                                        minValue: 0,
+                                        maxValue: 40,
+                                        segments: [
+                                          GaugeSegment(
+                                              'Normal', 6.67, Colors.green),
+                                          GaugeSegment('Concerning', 13.33,
+                                              Colors.yellowAccent),
+                                          GaugeSegment(
+                                              'Over emitting', 20, Colors.red),
+                                        ],
+                                        valueWidget: Text(
+                                          scopeValue2021.toStringAsFixed(1),
+                                          style: const TextStyle(fontSize: 40),
                                         ),
+                                        currentValue: scopeValue2021.toDouble(),
+                                        needleColor: Colors.blue,
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            );
-                          });
-                    },
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    child: Row(
-                      children: const [
-                        ImageIcon(
-                          AssetImage("icons/shoprite_checkers.jpeg"),
-                          color: Colors.green,
-                        ),
-                        Text(
-                          'SHOPRITE HOLDINGS',
-                          style: TextStyle(color: text_col),
-                        ),
-                      ],
-                    )),
+                            ),
+                          );
+                        });
+                  },
+                  icon: Image.asset('icons/shoprite_checkers.png'),
+                  label: const Text(
+                    '',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),

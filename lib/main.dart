@@ -34,37 +34,47 @@ class Home extends StatelessWidget {
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerFloat,
           backgroundColor: Colors.transparent,
-          appBar: AppBar(
-              title: const Text(
-                'ABSA Green Deals',
-                style: TextStyle(
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              centerTitle: true,
-              backgroundColor: green),
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              //const Center(child: Text('Welcome to ABSA Green Deal')),
               Container(
                   alignment: Alignment.center,
-                  color: barchart[4],
+                  color: Colors.transparent,
                   padding: const EdgeInsets.all(30.0),
                   child: const SizedBox(
-                      height: 100,
+                      height: 120,
                       width: 700,
                       child: Text(
-                        'By the year 2030 ABSA aims to transition into making more green deals as an attempt to uphold\n the Global Development Goals proposed by the United Nations and promoting Sustainability overall.',
+                        'Absa CIB Carbon Emissions Dashboard',
                         style: TextStyle(
                           //fontSize: 30.0,
                           fontWeight: FontWeight.bold,
-                          fontSize: 30,
+                          fontSize: 25,
                           color: Colors.white,
                         ),
                       ))),
+              SizedBox(
+                height: 175,
+                width: 600,
+                child: Container(
+                    alignment: Alignment.bottomCenter,
+                    color: Colors.white70,
+                    padding: const EdgeInsets.all(20.0),
+                    child: const SizedBox(
+                      width: 550,
+                      height: 200,
+                      child: Text(
+                        'By the year 2030, Absa aims to transition into making more sustainable deals as an attempt to uphold the Global Development Goals proposed by the United Nations and play a part in securing our future.\nThis project aims to encourage analysis of publically-available data to create a green standard for lending practices.',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Color.fromRGBO(240, 90, 120, 1),
+                        ),
+                      ),
+                    )),
+              )
               /* ElevatedButton(
             onPressed: () {},
             style: ButtonStyle (backgroundColor: MaterialStateProperty.all<Color>(Colors.red) ),

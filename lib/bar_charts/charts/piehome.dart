@@ -30,7 +30,7 @@ class PieHome extends StatelessWidget {
               child: DecoratedBox(
                 decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
                 child: Average(),
               ),
             ),
